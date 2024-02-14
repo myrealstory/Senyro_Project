@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobile-navbar {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@font-face {
+  font-family: "Philosopher";
+  font-style: bold;
+  font-weight: 800;
+  src: url("../../style/fonts/Philosopher-Bold.ttf") format("truetype");
+}
+
+@layer base {
+  html,
+  body {
+    @apply m-0 scroll-smooth text-[14px] leading-[1.25px] tracking-wide;
+  }
+
+  body {
+    @apply mx-auto box-border min-h-screen w-full max-w-full bg-auto bg-center tracking-tighter antialiased;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    @apply block;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply break-words;
+  }
+  button {
+    @apply active:bg-transparent active:accent-transparent active:outline-none active:ring-0;
+  }
+  tbody,
+  thead,
+  table,
+  th,
+  tr,
+  td {
+    @apply p-0;
+  }
+
+  .TCFont {
+    font-family: "Noto Serif", "PingFang TC", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Arial Unicode MS",
+      "Arial";
+  }
+}
+
+@layer components {
+  /* ====================  GENERAL SETTING ==================== */
+
+  .btn-dark {
+    @apply rounded-full bg-primaryGold text-white;
+  }
+
+  .bg-transparent {
+    @apply bg-[rgba(0,0,0,0)];
+  }
+
+  .navbar li {
+    @apply relative text-center text-primaryDark;
+  }
+  .navbar li:hover,
+  .navbar li:focus {
+    @apply font-semibold opacity-100;
+  }
+  .navbar li::before {
+    @apply selectBall;
+  }
+  /* .navbar li:nth-child(1):hover::before,
+  .navbar li:nth-child(2):hover::before,
+  .navbar li:nth-child(3):hover::before {
+    @apply block;
+  } */
+
+  .selectBall {
+    @apply absolute left-1/2 hidden  h-2 w-2 -translate-x-1/2 rounded-full bg-primaryGold content-[''] md:-bottom-3;
+  }
+
+  .focusRing {
+    @apply focus:border-none focus:border-primaryGold focus:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryGold;
+  }
+  .errorRing {
+    @apply focus:border-none focus:border-primaryPurple focus:bg-transparent focus:outline-none focus:ring-2 focus:ring-primaryPurple;
+  }
+
+  /*==================== Menu Btn ====================*/
+
+  .btnMenu {
+    @apply relative block h-[0.5px] w-[50%] bg-white;
+  }
+  .btnMenu::before {
+    @apply absolute -top-[600%] left-0 block h-[0.5px] w-[100%] bg-white content-[''] md:-top-[700%] lg:-top-[800%] 2xl:-top-[1000%];
+  }
+  .btnMenu::after {
+    @apply absolute left-0 top-[600%] block h-[0.5px] w-[100%] bg-white content-[''] md:top-[700%] lg:top-[800%] 2xl:top-[1000%];
+  }
+
+  .btnClose {
+    @apply relative flex h-10 w-10 items-center justify-center rounded-full border border-solid border-primaryDark;
+  }
+
+  .btnClose::before {
+    @apply absolute left-[50%] top-[50%] block h-[1px] w-[40%] origin-center -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-primaryDark content-[''];
+  }
+  .btnClose::after {
+    @apply absolute left-[50%] top-[50%] block h-[1px] w-[40%] origin-center -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-primaryDark content-[''];
+  }
+  .btnClose:hover {
+    @apply border-primaryGold;
+  }
+
+  .btnClose::before:hover,
+  .btnClose::after:hover {
+    @apply bg-primaryGold;
+  }
+
+  .btnCloseCookieBar {
+    @apply relative flex h-8 w-8 items-center justify-center rounded-full border border-solid border-primaryDark md:mx-10 
+    xl:h-11 xl:w-11;
+  }
+
+  .btnCloseCookieBar::before {
+    @apply absolute left-[30%] top-[50%] block h-[1px] w-[40%] rotate-45 transform bg-primaryDark content-[''];
+  }
+  .btnCloseCookieBar::after {
+    @apply absolute left-[30%] top-[50%] block h-[1px] w-[40%] -rotate-45 transform bg-primaryDark content-[''];
+  }
+  .btnCloseCookieBar:hover,
+  .btnCloseCookieBar::after:hover,
+  .btnCloseCookieBar::before:hover {
+    @apply border-primaryGold;
+  }
+  /*====================Footer BTN====================*/
+  .footerMenuBTN {
+    @apply block text-10 font-normal leading-6 text-primaryDark md:mb-2 lg:text-12 xl:mb-3 2xl:text-14;
+  }
+
+  .footerMenuBTN:hover {
+    @apply text-primaryGold;
+  }
+
+  .wrapper {
+    @apply w-full px-4 sm:mx-auto lg:max-w-[990px] lg:px-0 xl:max-w-[1260px] 2xl:max-w-[1500px];
+  }
+
+  .favProductWrapper {
+    @apply w-full px-4 sm:mx-auto md:max-w-full md:px-0;
+  }
+
+  .cartWrapper {
+    @apply w-full px-4 md:mx-auto md:max-w-[80vw] xl:max-w-[64vw];
+  }
+
+  .wrapperPxMore {
+    @apply px-4 md:px-[10vw] lg:px-[15vw] xl:px-[18vw] 2xl:px-[28vw];
+  }
+
+  .heroBanner {
+    @apply h-[240px]  sm:h-[26vw];
+  }
+
+  .amountBox {
+    @apply absolute flex transform items-center justify-center rounded-full bg-primaryGold p-1 text-sm text-white md:text-base lg:w-7;
+  }
+
+  /*==================== Link ====================*/
+
+  .default-link {
+    @apply text-primaryGold hover:text-primaryDark;
+  }
+
+  /*==================== Input ====================*/
+
+  .labelText {
+    @apply block text-[16px] font-semibold leading-5 lg:text-primaryGold xl:text-[17px];
+  }
+
+  .success-msg {
+    @apply pl-[23px] text-[12px] font-semibold leading-5 text-primaryPurple lg:pl-0;
+  }
+
+  .error-msg {
+    @apply pl-[5px] text-[12px] font-semibold leading-5 text-primaryPurple lg:pl-0;
+  }
+
+  /*==================== Chips ====================*/
+  .chipBasicStyle {
+    @apply border border-primaryGold text-[14px] leading-5 text-primaryGold xl:text-[16px];
+  }
+
+  .chip-Selected {
+    @apply bg-primaryGold font-semibold text-white;
+  }
+
+  .chipBtn {
+    @apply h-[60px] w-[80px] rounded-[12px] xl:h-[55px] xl:w-[75px];
+  }
+
+  .chipBtnWithMoreRadius {
+    @apply h-[50px] w-[65px] rounded-[49px] xl:h-[55px] xl:w-[75px];
+  }
+
+  /*==================== OTP Btn ====================*/
+  .otp {
+    @apply focusRing bg-primaryGold text-white hover:bg-secondaryLightGold1 hover:text-primaryDark;
+  }
+
+  /*==================== Width & Height ====================*/
+
+  /*===ProductItems===*/
+  .productItemsBox {
+    @apply w-[17.4rem] xl:w-[18vw];
+  }
+
+  /*===AddtoCart===*/
+  .addToCartBox {
+    @apply h-[40px] w-[40px] md:h-[2.625rem] md:w-[2.625rem] xl:h-[58px] xl:w-[58px];
+  }
+  .addToCartIcon {
+    @apply h-[24px] w-[24px] md:h-[1.3125rem] md:w-[1.3125rem] xl:h-[28px] xl:w-[28px];
+  }
+
+  .creditCardImage {
+    @apply absolute left-[87%] top-[66%] h-auto -translate-x-1/2 -translate-y-1/2 transform self-center;
+  }
+
+  .inputIcons {
+    @apply absolute right-[20px] h-auto w-[18px];
+  }
+
+  .customTabContainer {
+    @apply mb-6 flex w-full border-primaryGold text-center text-[16px] leading-4 text-primaryGold sm:px-4  md:pt-3 lg:border-b-[1px] lg:px-0 xl:pb-0 xl:text-[18px];
+  }
+
+  .customTabCommonStyle {
+    @apply flex w-1/2 justify-center  md:w-[610px] md:cursor-pointer;
+  }
+
+  .customTabActivate {
+    @apply border-b-2 border-primaryGold font-semibold;
+  }
+
+  .trashBlock {
+    @apply mr-1 h-[1.4vw] w-[1.4vw] xl:mr-2;
+  }
+  .transIcon {
+    @apply absolute right-2 top-1/2 h-[calc(18px/0.69)] -translate-y-1/2 md:w-[18px] 2xl:right-3;
+  }
+}
+
+@layer utilities {
+  .no-scroll {
+    @apply overflow-hidden;
+  }
+}
+
+/* ==================== general seciton ======================= */
+
+.generalPageTitle {
+  @apply text-center text-[22px] font-semibold leading-[22px] tracking-[-0.44px] text-black  xl:mt-8 xl:text-h3 xl:leading-[51px] xl:tracking-[-0.64px];
+}

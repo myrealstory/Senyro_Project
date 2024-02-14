@@ -1,0 +1,67 @@
+export type ValueOf<T> = T[keyof T];
+
+const ROUTES = {
+  ABOUT: "about" as const,
+  INDEX: "index" as const,
+  PRODUCT: "item" as const, // PDP
+  MEMBER: "member" as const,
+  CONTACT: "contact" as const,
+  REGISTRATION: "customer/account/create" as const,
+  REGISTRATIONPAGEPATH: "registration" as const,
+  LOGIN: "login" as const,
+  REGISTRATION_INFO: "registration/info" as const,
+  REGISTRATION_PENDING: "pending" as const,
+  REGISTRATION_SUBMITTED: "submitted" as const,
+  CART: "cart" as const,
+  CAMPAIGN: "campaign" as const,
+  ADD_ON: "add-on" as const,
+  CHECKOUT: "checkout" as const,
+  PROCESSING: "processing" as const,
+  ORDER_COMPLETE: "order-complete" as const,
+  TRANSACTION_INSTORE: "instore" as const,
+  TRANSACTION_ONLINE: "online" as const,
+  COUPON_VALID: "valid-coupon" as const,
+  COUPON_EXPIRED: "expired-coupon" as const,
+  PAY_WITH_CARDS: "pay-with-cards" as const,
+  INBOX_PERSONAL: "personal" as const,
+  INBOX_PROMOTION: "promotion" as const,
+  MEMBER_UPGRADE: "member/upgrade" as const,
+  MEMBER_EDIT_PROFILE: "member/edit-profile" as const,
+  MEMBER_COUPON: "member/coupons" as const,
+  MEMBER_INBOX: "member/inbox" as const,
+  MEMBER_TRANSACTION: "member/transaction" as const,
+  MEMBER_ADD_CARDS: "member/add-cards" as const,
+  MEMBER_FAV: "member/favourite" as const,
+  MEMBER_SAVED_CARDS: "member/saved-cards" as const,
+  MEMBER_TERMS_CONDITIONS: "membership-terms-and-conditions" as const,
+  MEMBER_INBOX_PERSONAL: "personal" as const,
+  MEMBER_INBOX_PROMOTION: "promotion" as const,
+  MEMBER_PAY_WITH_CARDS: "pay-with-cards" as const,
+  DINE_IN_WALKING_IN_MENU: "dine-in-walking-in-menu" as const,
+  STORE_LOCATION: "store-location" as const,
+  MAINTENANCE: "maintenance" as const,
+  MAINTENANCE_DAILY: "maintenance-daily" as const,
+  FAVOURITE: "favourite" as const,
+  FAQ: "faqs" as const,
+  QUALITYOFINGREDIENT: "quality-ingredient" as const,
+  TERMS_AND_CONDITION: "terms-conditions" as const,
+  PRIVACY_AND_POLICY: "privacy-policy" as const,
+  LATEST_NEWS: "news-offers" as const,
+  MENU: "dine-in-walking-in-menu" as const,
+  MEMBERSHIP_PROGRAM: "membership-program" as const,
+  GENERAL_PAGE: "general" as const,
+  CAMPAIGN_FORM: "campaign-form" as const,
+  OTP_OUT_EMAIL: "unsubscribe" as const,
+  ERROR_404: "error-404" as const,
+  MEMBER_TERMS: "membership-terms-and-conditions" as const,
+  NEWS_OFFERS_VIDEO_DEMO: "news-offers-video" as const,
+  VERIFY_NEW_USER_EMAIL: "verify" as const,
+  EDM: "EDM" as const,
+};
+
+export { ROUTES };
+
+type RoutesType = typeof ROUTES;
+type RoutesNameType = ValueOf<RoutesType>;
+
+export type { RoutesType, RoutesNameType };

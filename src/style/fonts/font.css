@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700&display=swap");
+
+@font-face {
+  font-family: "Philosopher";
+  font-style: bold;
+  font-weight: 800;
+  src: url("./Philosopher-Bold.ttf") format("truetype");
+}
+
+.philosopher {
+  font-family: "Philosopher", sans-serif;
+}
+
+.fontWorkSans {
+  font-family: "Work Sans", sans-serif;
+}

@@ -1,0 +1,138 @@
+@mixin cartSize {
+  @apply h-cartBox w-cartBox md:h-cartBoxM md:w-cartBoxM xl:h-cartBoxXL xl:w-cartBoxXL;
+}
+
+@mixin imageCommonStyle {
+    @apply h-full
+          w-full
+          object-cover
+          object-center
+          pointer-events-none
+          cursor-none;
+  }
+/*=============CategoryList===========*/
+@mixin categoryListBoxSize {
+  @apply w-full md:h-[36px] lg:h-[40px] 2xl:h-[52px] ;
+}
+
+@mixin categoryBoxSize {
+  @apply h-full w-[6.25vw];
+}
+
+@mixin categoryImgBoxSize {
+  @apply h-[1.8rem]
+    w-[1.8rem]
+    lg:h-[2.5vw]
+    lg:w-[2.5vw];
+
+  div {
+    @apply h-4 w-2;
+  }
+}
+@mixin categoryMainButtonBoxSize {
+  @apply h-[52px] w-[76px]
+    text-14 leading-4
+    md:w-[126px] 
+    md:h-auto aspect-[7/2]  lg:w-[140px]
+    2xl:w-[182px]
+    md:text-18;
+}
+
+/*============= Member Layout ===========*/
+
+/*
+export default function ReceiptLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <main className="pb-23 mx-auto px-4 pt-6 sm:px-28 md:px-40 lg:grid lg:w-full lg:max-w-[900px] lg:gap-8 lg:px-0 lg:py-11 xl:py-24 2xl:max-w-[1100px]">
+      {children}
+    </main>
+  );
+}
+
+}
+
+/*======MenuBTN Size=======*/
+@mixin gotoBackBTNSize {
+    @apply h-10 w-10
+    lg:h-[2.4vw] lg:w-[2.3vw];
+}
+
+@mixin toogleMenuBTNSize {
+    @apply h-10 w-10
+    md:h-9 md:w-9
+    lg:w-[33px] lg:h-[33px];
+}
+@mixin innerMenuBTNSize {
+    @apply h-screen w-full
+    md:h-[105vh] md:w-[49.8vw]
+    xl:h-screen xl:w-[40vw];
+}
+
+/*========== PDP ===========*/
+@mixin badgesContainerSize {
+    div{
+        .badgesImage{
+            @apply h-auto
+            w-5
+            md:w-8
+            aspect-square
+        }
+    }
+}
+
+@mixin sliderContainerSize {
+    @apply 2xl:w-[700px] h-auto
+    xl:w-[500px] lg:w-[450px] w-full ;
+
+    .favorButton {
+        .innerClasses{
+            @apply h-auto 
+            w-10 
+            lg:w-12 
+            2xl:w-16;
+        }
+    }
+}
+
+@mixin desktopInfoContainerSize {
+    @apply w-full;
+}
+
+@mixin scrollToTopButtonSize {
+    @apply h-auto 
+    w-[32px]  
+    lg:w-[40px] 
+    2xl:w-[60px]
+    aspect-square;
+
+    img{
+      @apply 2xl:w-6 lg:w-5 w-4 h-auto aspect-[2/1];
+    }
+}
+
+@mixin descriptionBoxSize {
+    @apply w-full;
+}
+
+/*=========floating=========*/
+
+@mixin floatingContainerSize {
+    
+}
+@mixin btnDotSize {
+  @apply mx-1 h-auto
+  aspect-square
+  w-[10px]
+  md:mx-[5px]
+  lg:w-3 
+}
+@mixin productDotSize {
+  @apply mx-1 
+  h-auto
+  aspect-square
+  w-[10px]
+  md:mx-[3px]
+  lg:mx-[5px] md:w-[8px]
+  lg:w-[8px]
+  2xl:w-[12px];
+}

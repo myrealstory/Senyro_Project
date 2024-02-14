@@ -1,0 +1,363 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../generalSize.scss";
+
+/*======== PDP =============*/
+
+.PDPContainer {
+    @apply relative
+    pb-5
+    pt-3
+    md:py-[3.48vvw];
+
+    .PDPContainerRow {
+        @apply flex
+        flex-col
+        items-center
+        pb-10
+        md:flex-row
+        md:pb-0;
+
+    }
+}
+
+.productInfoContainer {
+    @apply my-6
+    mx-auto
+    w-full
+    md:mx-0
+    lg:flex
+    lg:justify-start
+    lg:w-full
+    2xl:my-8
+    lg:gap-16
+    2xl:gap-20;
+
+    .mobileInfoContainer {
+        @apply block
+        lg:hidden
+        w-full;
+
+        h3{
+            @apply text-14
+            mb-1
+            leading-4
+            text-primaryGold
+            md:text-20
+            md:font-normal
+            md:leading-6;
+        }
+        .infoTitleContainer{
+            @apply mb-1
+            flex
+            items-center
+            justify-between
+            md:mb-2;
+
+            h2{
+                @apply
+                text-26
+                leading-[46px]
+                text-primaryDark
+                md:text-7
+                md:leading-[50px];
+            }
+        }
+        .badgesContainer {
+            @include badgesContainerSize;
+            @apply mb-5
+            flex
+            items-center
+            flex-wrap
+            gap-6
+            w-full;
+
+            div{
+                @apply flex
+                items-center;
+
+                .badgesImage{
+                    @apply mr-2;
+                }
+                span{
+                    @apply text-14
+                    leading-4
+                    text-primaryDark
+                    md:text-18
+                    md:leading-5;
+                }
+            }
+        }
+        .promotionBar {
+            @apply mb-4
+            block
+            rounded-xl 
+            bg-secondaryLightSand 
+            px-4 
+            py-2 
+            text-center
+            w-full 
+            lg:hidden;
+
+            p{
+                @apply text-16 
+                font-normal 
+                leading-6
+            }
+        }
+    }
+    .sliderContainer{
+        @include sliderContainerSize;
+        @apply relative 
+        mb-10 
+        lg:mb-0
+        flex-shrink-0;
+
+        .favorButton{
+            @apply absolute 
+            left-8 
+            top-6 
+            md:left-5 
+            md:top-5 
+            xl:left-8 
+            xl:top-8;
+
+            .innerClasses{
+                
+            }
+        }
+    }
+
+    .desktopInfoContainer{
+        @include desktopInfoContainerSize;
+        
+        .infoTitleContainer{
+            @apply hidden lg:block ; 
+
+            h3{
+                @apply mb-1 
+                md:mb-0
+                text-14 
+                leading-4 text-primaryDark 
+                md:text-14 
+                md:font-normal 
+                md:leading-6 
+                md:text-primaryGold
+                lg:leading-7 
+                lg:text-16 
+                2xl:leading-7 
+                2xl:text-18;
+            }
+
+            .infoTitle {
+                @apply mb-4 
+                flex 
+                justify-between 
+                md:mb-2;
+
+                h2{
+                    @apply
+                    text-24 
+                    leading-8 
+                    text-primaryDark
+                    md:text-28 
+                    md:leading-[36px]
+                    lg:leading-[46px]
+                    2xl:leading-[50px]
+                    lg:text-[30px]
+                    2xl:text-[38px];
+                }
+            }
+
+            .badgesContainer{
+                @apply mb-6 
+                flex 
+                flex-wrap 
+                items-center 
+                md:mb-4
+                lg:mb-5 
+                md:w-full 
+                md:gap-4;
+
+                .badgesBox {
+                    @apply flex 
+                    items-center;
+
+                    .badgesImage{
+                        @apply mr-2 
+                        w-6 
+                        h-auto
+                        aspect-square
+                        md:w-[20px]
+                        lg:w-[24px]
+                        2xl:w-[28px]
+                        object-contain;
+                    }
+                    span{
+                        @apply text-14 
+                        leading-4 
+                        text-primaryDark 
+                        md:text-14 
+                        md:leading-5
+                        2xl:text-16;
+                    }
+                }
+            }
+        }
+
+        .promotionBar{
+            @apply hidden
+            bg-secondaryLightSand 
+            px-4 
+            lg:block 
+            md:mb-4 
+            lg:mb-5 
+            md:rounded-[10px] 
+            lg:rounded-xl 
+            md:p-3
+            2xl:p-4;
+            
+            p{
+                @apply text-12 
+                font-normal 
+                leading-3 
+                md:text-14 
+                lg:text-16 
+                lg:leading-6 
+                2xl:text-18 
+                2xl:leading-7;
+            }
+        }
+
+        .priceBadgesContainer{
+            @apply mb-12
+            w-full
+            md:mb-2
+            md:px-0
+            lg:max-w-[518px]
+            ;
+
+            .priceBadgesRow {
+                @apply flex
+                2xl:gap-10
+                md:gap-8
+                xl:gap-6
+                justify-between
+                ;
+
+                .generalPriceBox{
+                    @apply pr-[1.5%]
+                    w-1/2;
+
+                    li{
+                        @apply mb-4
+                        flex
+                        items-center;
+
+                        .imageBox{
+                            @apply relative 
+                            h-auto
+                            w-[50%]
+                            aspect-[3/1]
+                            lg:w-[140px] 
+                            2xl:w-[160px] 
+                            md:aspect-[3.75/1];
+
+                            & img {
+                                @include imageCommonStyle;
+                            }
+
+                        }
+                        span {
+                            @apply pl-2 
+                            text-xl 
+                            font-medium 
+                            leading-6 
+                            text-primaryGold 
+                            md:text-h3
+                            md:font-semibold 
+                            md:leading-9;
+                        }
+                    }
+                }
+                
+                .memberPriceBox{
+                    @apply  
+                    w-1/2;
+
+                    li{
+                        @apply mb-4 
+                        flex 
+                        items-center;
+
+                        .imageBox{
+                            @apply relative 
+                            h-auto
+                            w-[50%]
+                            aspect-[3/1]
+                            lg:w-[140px] 
+                            2xl:w-[160px] 
+                            md:aspect-[3.75/1];
+
+                            & img {
+                                @include imageCommonStyle;
+                            }
+                        }
+                        span {
+                            @apply pl-2 
+                            text-xl 
+                            font-medium 
+                            leading-6 
+                            text-primaryGold 
+                            md:text-h3 
+                            md:font-semibold 
+                            md:leading-9;
+                        }
+                    }
+                }
+            }
+        }
+
+        .scrollToTopButton {
+            @include scrollToTopButtonSize;
+            @apply fixed 
+            bottom-[150px] 
+            right-4 
+            z-50
+            flex 
+            items-center 
+            justify-center 
+            rounded-full 
+            bg-white60 
+            lg:bottom-[15%] 
+            ;
+        }
+
+        .descriptionBox {
+            @include descriptionBoxSize;
+            @apply mb-8
+            text-14
+            leading-[22px] 
+            text-primaryDark 
+            whitespace-normal
+            block
+            md:mb-5 
+            md:px-0
+            md:text-12
+            md:leading-5
+            lg:text-14
+            lg:leading-6 
+            2xl:text-16 
+            2xl:leading-[30px]
+            md:mr-[30px]
+            lg:mr-[30px]
+            2xl:mr-[50px];
+        }
+
+
+       
+    }
+
+
+}

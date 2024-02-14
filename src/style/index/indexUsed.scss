@@ -1,0 +1,1212 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../generalSize.scss";
+
+@mixin bg-gradient-to-right($start-color, $mid-color, $end-color) {
+  background: linear-gradient(to right, $start-color, $mid-color, $end-color);
+}
+@mixin background-noRepeat {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.customSlide {
+  @apply w-full flex-shrink-0 snap-start ease-linear;
+
+  .active {
+    @apply block;
+  }
+}
+
+.prevButton,
+.nextButton {
+  @apply cursor-pointer border-none bg-transparent;
+}
+
+/*===================Banner ==========================*/
+.Carousel {
+  @apply mx-auto my-0 w-full;
+
+  .Carousel-content {
+    @apply relative 
+            flex
+            flex-row
+            overflow-hidden;
+
+    .Carousel-hoverContent {
+      @include bg-gradient-to-right(#000000, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+      @apply absolute
+                left-0
+                top-0
+                h-full
+                w-full;
+      /* position: absolute;
+                top: 0;
+                left: 0;
+                content:'';
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.4) 20.08%, rgba(0, 0, 0, 0) 70%); */
+    }
+
+    .Carousel-items {
+      @apply relative bg-cover bg-center bg-no-repeat;
+    }
+
+    .Carousel-hoverEffect {
+      @apply before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-full before:bg-bgGradientToR;
+    }
+  }
+  .btn-dot {
+    @include btnDotSize;
+    @apply rounded-full border border-solid;
+  }
+  .btn-dot.btn-active {
+    @apply rounded-full border border-solid;
+  }
+
+  .product-dot {
+    @include productDotSize;
+    @apply rounded-full border border-solid opacity-30;
+  }
+  .product-dot.btn-active {
+    @apply scale-125 opacity-100;
+  }
+}
+
+/*===============================MainBTN===========================*/
+
+.buttonWrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 0px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(141, 122, 91, 0.3);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  @media screen and (min-width: 768px) {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+      height: 0.5rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+    }
+  }
+}
+
+.hiddenScrollBar {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hiddenScrollBar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.hiddenScrollBar::-webkit-scrollbar-track {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .hiddenScrollBar {
+    overflow-x: auto;
+  }
+}
+
+.bgLinearRight {
+  @include background-noRepeat;
+  @apply bg-bgLinearRight;
+}
+.bgLinearLeft {
+  @include background-noRepeat;
+  @apply bg-bgLinearLeft;
+}
+
+.indexSticky {
+  @apply left-0
+        z-99
+        w-full
+        bg-MainBG
+        bg-auto
+        bg-center
+        shadow-filterBarShadow;
+}
+
+.wrapper {
+  // indexContent - yellowContent
+  .yellowContent {
+    @apply mb-4
+            rounded-md
+            bg-secondaryLightSand
+            px-6
+            py-2
+            text-center
+            text-md
+            md:mx-auto
+            md:w-full
+            md:py-1
+            lg:text-lg
+            2xl:py-3;
+    p {
+      @apply w-full;
+    }
+  }
+
+  // indexContent - productCart
+  .productCartList {
+    @apply relative
+            col-auto
+            flex
+            transform
+            flex-wrap
+            justify-center
+
+            duration-500
+            md:grid
+            md:grid-cols-2
+            md:justify-items-stretch
+            md:gap-x-[3.2rem]
+            lg:grid-cols-3
+            lg:gap-x-[1.7rem]
+            2xl:gap-x-[2.6rem];
+  }
+
+  // memberContent - Favorite item list - product
+  .favItemsProductList {
+    @apply relative
+            flex
+            transform
+            flex-wrap
+            justify-between
+            duration-500
+
+            md:grid
+            md:grid-cols-2
+            md:justify-start
+            md:gap-[1.5rem];
+  }
+}
+
+/*===============================customButton===========================*/
+
+.loadAllContainer {
+  @apply mb-10
+        flex
+        justify-center
+        md:mb-16;
+
+  .customButton_Container {
+    @apply h-[45px] 
+    w-[150px] 
+    md:h-[50px] 
+    md:w-[160px] 
+    xl:h-[55px] 
+    xl:w-[180px];
+  }
+  .customButton_Text {
+    @apply whitespace-nowrap
+    text-md
+    font-medium
+    md:text-xl;
+  }
+}
+
+.stepBtnContainer {
+  @apply absolute 
+  bottom-6 
+  right-0 
+  flex h-[48px] 
+  w-full
+  items-center 
+  justify-between
+  px-5 
+  md:bottom-8 
+  md:right-10
+  md:h-[54px]
+  md:justify-end 
+  xl:h-[58px];
+
+  & .defaultStyle {
+    @apply h-full 
+    w-full
+    md:max-w-[160px]
+    xl:max-w-[170px];
+
+    .textStyle {
+      @apply text-center
+      text-14
+      leading-6
+      lg:text-15;
+    }
+    &.left {
+      @apply w-[86px] md:mr-8
+      md:w-full;
+    }
+    &.right {
+      @apply w-[200px];
+    }
+  }
+}
+
+/*===============================AddToCartButton===========================*/
+
+.cartButtonContainer {
+  @apply flex
+  w-auto
+  flex-col
+  justify-center
+  md:flex-row
+  md:justify-start;
+
+  .cartButtonBox {
+    @apply relative 
+                flex
+                items-center
+                justify-center
+                rounded-full
+                bg-white
+
+                md:rounded-2xl;
+
+    .cartSoldOut {
+      @apply flex 
+                    items-center 
+                    justify-center 
+                    opacity-40;
+
+      p {
+        @apply font-medium;
+      }
+    }
+
+    .cartAmountButton {
+      button {
+        @apply active:bg-transparent
+                active:outline-none
+                active:ring-0
+                active:ring-transparent
+                active:ring-offset-0
+                active:ring-offset-transparent
+                active:ring-offset-transparent
+                active:ring-offset-transparent
+                active:ring-offset-transparent
+                active:ring-offset-transparent;
+      }
+      @apply flex
+              h-auto
+              w-full
+              items-center
+              justify-between;
+
+      .minusButton {
+        @apply flex
+                items-center
+                justify-center;
+
+        img {
+          @include imageCommonStyle;
+        }
+      }
+      .amountContent {
+        @apply font-semibold;
+      }
+      .plusButton {
+        @apply flex
+                        items-center
+                        justify-center
+                        opacity-100;
+        img {
+          @include imageCommonStyle;
+          @apply block;
+        }
+      }
+    }
+  }
+  .defaultCartButton {
+    @include cartSize;
+    @apply p-3;
+    .cartSoldOut {
+      p {
+        @apply text-21
+            leading-6
+            md:text-22;
+      }
+    }
+
+    .amountContent {
+      @apply text-21
+        leading-6
+        
+
+        md:text-20
+
+        xl:text-24;
+    }
+    .cartAmountButton {
+      .minusButton {
+        @apply h-[26px]
+        w-[26px]
+        md:h-[30px]
+        md:w-[30px];
+      }
+      .plusButton {
+        @apply h-[26px]
+        w-[26px]
+        md:h-[30px]
+        md:w-[30px];
+      }
+    }
+  }
+
+  .memberFavoriteCartButton {
+    @apply h-cartBox w-cartBox p-3 md:h-cartBoxM md:w-cartBoxM;
+    .cartSoldOut {
+      p {
+        @apply text-21
+            leading-6
+            md:text-22;
+      }
+    }
+
+    .amountContent {
+      @apply text-21
+        leading-6
+        
+
+        md:text-20
+
+        xl:text-24;
+    }
+    .cartAmountButton {
+      .minusButton {
+        @apply h-[26px]
+        w-[26px]
+        md:h-[30px]
+        md:w-[30px];
+      }
+      .plusButton {
+        @apply h-[26px]
+        w-[26px]
+        md:h-[30px]
+        md:w-[30px];
+      }
+    }
+  }
+
+  .largeCartButton {
+    @apply aspect-[2.857/1]
+      h-MdLargeCartButton
+      rounded-full
+      px-2
+      py-1
+      md:rounded-xl
+
+      xl:h-XlLargeCartButton;
+    .cartSoldOut {
+      p {
+        @apply text-21
+            leading-6
+            md:text-23;
+      }
+    }
+
+    .amountContent {
+      @apply text-22
+        leading-6
+
+        md:text-21
+
+        xl:text-26;
+    }
+    .minusButton {
+      @apply h-10
+              w-10
+
+              md:h-10
+              md:w-10
+
+              xl:h-12
+              xl:w-12;
+    }
+    .plusButton {
+      @apply h-10
+              w-10
+
+              md:h-10
+              md:w-10
+
+              xl:h-12
+              xl:w-12;
+    }
+  }
+  .smallCartButton {
+    @apply h-smallCartButton
+      w-smallCartButton
+      px-2
+      py-1
+
+      md:h-MdSmallCartButton
+      md:w-MdSmallCartButton
+
+      xl:h-XlSmallCartButton
+      xl:w-XlSmallCartButton;
+
+    .cartSoldOut {
+      p {
+        @apply text-21
+            leading-6
+            md:text-23;
+      }
+    }
+
+    .amountContent {
+      @apply text-18
+        leading-6
+
+        md:text-18
+
+        xl:text-21;
+    }
+    .cartAmountButton {
+      .minusButton {
+        @apply h-[26px]
+          w-[26px]
+          md:h-[30px]
+          md:w-[30px];
+      }
+      .plusButton {
+        @apply h-[26px]
+          w-[26px];
+      }
+    }
+  }
+  .oosStatusFav {
+    @apply flex h-fit w-[90px]
+            items-center
+            justify-center
+            rounded-xl
+            bg-white60
+            py-[.7rem]
+            text-12
+            font-semibold
+            text-primaryDark;
+  }
+  .oosStatus {
+    @apply flex
+            h-fit
+            items-center
+            justify-center
+            rounded-xl
+            bg-white60
+            px-5
+            py-3
+            text-12
+            font-semibold
+            text-primaryDark
+
+            md:px-4
+            md:py-3
+            md:text-14
+            md:leading-4
+                
+            xl:px-5
+            xl:py-4
+            xl:text-16
+            xl:leading-7;
+  }
+  .addButton {
+    @apply flex
+            h-[35px]
+            w-[35px]
+            items-center
+            justify-center
+            rounded-xl
+            bg-secondaryLightGold2
+            p-2 
+            transition-transform
+            duration-500 
+            hover:scale-125
+            
+            md:bottom-0
+            md:p-[8px]
+            
+          
+            xl:rounded-xl;
+  }
+  .shortButton {
+    @apply flex
+            h-[40px]
+            w-[40px]
+            items-center
+            justify-center
+            rounded-xl
+            bg-secondaryLightGold2 
+            transition-transform
+            duration-500 
+            hover:scale-125
+            
+            md:bottom-0
+            md:p-2 
+            
+            xl:h-[45px]
+            xl:w-[45px]
+            xl:rounded-2xl 
+            xl:p-3;
+
+    div {
+      @apply flex 
+                h-[24px] 
+                
+                w-[24px] 
+                items-center 
+                
+                justify-center 
+                md:h-[1.3125rem]
+                md:w-[1.3125rem]
+                xl:h-[28px]
+                xl:w-[28px];
+
+      Image {
+        @include imageCommonStyle;
+      }
+    }
+  }
+  .editButton {
+    @apply block 
+    text-16 
+    font-bold 
+    uppercase 
+    leading-5 
+    underline 
+    md:text-16
+    lg:text-20;
+  }
+  .fullButton {
+    @apply flex
+    w-full
+    items-center
+    justify-center 
+    py-5
+    lg:h-[60px]
+    lg:w-[200px]
+    2xl:h-[68.5px]
+    2xl:w-[223px];
+
+    .fullButton_text {
+      @apply whitespace-nowrap 
+      text-16 
+      leading-6
+      md:leading-8 
+      2xl:text-18;
+    }
+
+    .fullButton_Icon {
+      @apply mr-3 
+      aspect-square 
+      h-auto 
+      w-5 
+      md:w-7;
+    }
+  }
+}
+
+/*===============================NavBar===========================*/
+
+.navBar {
+  @apply flex 
+    h-[56px]
+    w-full 
+    items-center
+    justify-between
+    md:h-[68px];
+
+  .checkoutNavbar {
+    @apply flex
+        w-full
+        items-center
+        justify-between;
+  }
+
+  .logo {
+    @apply w-12
+      md:mr-[50px]
+      md:h-auto
+      md:w-[48px]
+      lg:mr-[100px]
+      lg:w-[55px]
+      2xl:mr-[150px]
+      2xl:w-[55px];
+
+    Image {
+      @include imageCommonStyle;
+    }
+  }
+  .commonNavbar {
+    @apply flex 
+        w-full
+        items-center
+        justify-between;
+
+    .navBarIcon {
+      @apply flex
+          h-full
+          w-auto
+          items-center
+          justify-end
+          pt-1
+          gap-5
+          lg:w-[205px];
+
+      .cartIcon {
+        @apply relative
+            cursor-pointer
+            mr-1
+            md:w-6
+            lg:w-7
+            2xl:w-[28px];
+
+        @media screen and (min-width: 2089px) {
+          @apply mr-10;
+        }
+      }
+
+      .memberNameIcon {
+        @apply relative
+          md:w-8
+          2xl:w-[30px];
+
+        .loginIcon {
+          @apply flex
+              aspect-square
+              items-center
+              justify-center
+              
+              
+              rounded-full
+              md:h-auto
+              md:w-full;
+
+          p {
+            @apply uppercase
+                  leading-6
+                  text-primaryGrey
+    
+                  md:text-12
+                  xl:text-14;
+          }
+
+          button > Image {
+            @include imageCommonStyle;
+            @apply md:pt-1
+            2xl:pt-2;
+          }
+        }
+      }
+
+      .switchIcon {
+      }
+    }
+    .navCenter {
+      @apply flex
+          items-center
+          justify-around
+          text-10
+          leading-5
+          lg:text-14
+          2xl:text-[17px];
+
+      &:has(> .selected) {
+        @apply pb-[10px];
+      }
+
+      .ENSpace {
+        @apply md:mr-5 lg:mr-6 xl:mr-8;
+      }
+      .TCSpace {
+        @apply md:mr-6 lg:mr-7 xl:mr-10;
+      }
+
+      .selected {
+        @apply font-semibold
+            opacity-100
+            after:block;
+      }
+    }
+  }
+}
+
+.cartButton {
+  @apply relative 
+  md:mb-6;
+}
+
+/*===============================CartWithTotalCount===========================*/
+
+.cartWithTotalCount {
+  .Image {
+    @include imageCommonStyle;
+  }
+  // span {
+  //   @apply absolute
+  //     right-cartWithTotalHorizontal
+  //     top-cartWithTotalVertical
+  //     flex
+  //     items-center
+  //     justify-center
+  //     rounded-full
+  //     bg-primaryGold
+  //     p-1
+  //     text-MDcartWithTotalCount
+  //     text-white
+
+  //     sm:top-MDcartWithTotalHorizontal
+  //     sm:h-cartWithTotalHeightSM
+  //     sm:w-cartWithTotalWidthSM
+
+  //     md:text-12
+  //     xl:-top-[13px]
+
+  //     xl:right-XLcartWithTotalVertical
+  //     xl:max-h-cartWithTotalMaxHeightXL
+  //     xl:min-h-cartWithTotalMinHeightXL
+  //     xl:min-w-cartWithTotalMinWidthXL
+  //     xl:max-w-cartWithTotalMaxWidthXL
+  //     2xl:text-14;
+  // }
+}
+
+/*===============================CategoryList===========================*/
+
+.categoriesWrapper {
+  @apply w-full px-4 md:mx-auto md:w-[90%] md:px-0;
+}
+
+.categoryListContainer {
+  @apply pb-2
+  pt-4
+  md:pb-4;
+
+  .categoryListBox {
+    @include categoryListBoxSize;
+    @apply relative;
+
+    .categoryButtonBox {
+      @include categoryBoxSize;
+      @apply absolute
+      top-0 
+      z-[99]
+      hidden 
+      items-center 
+      md:flex;
+
+      .categoryImgBox {
+        @include categoryImgBoxSize;
+        @apply ml-[1.56vw]
+        hidden
+        transform 
+        justify-center
+        rounded-full
+        bg-primaryDark
+        md:flex 
+        md:items-center;
+
+        &.dimArrow {
+          @apply before:absolute
+            before:left-0
+            before:top-0
+            before:z-[999]
+            before:h-full
+            before:w-full
+            before:cursor-default
+            before:rounded-full
+            before:bg-white/30;
+        }
+        div {
+          Image {
+            @include imageCommonStyle;
+          }
+        }
+      }
+    }
+
+    .CBLeft {
+      @apply left-0;
+    }
+    .CBRight {
+      @apply right-0;
+    }
+
+    .categoryMainContent {
+      @apply h-full
+      w-full
+      max-w-full
+      items-center
+      justify-center
+      overflow-auto;
+
+      .catergoryMainButtonBox {
+        @include categoryMainButtonBoxSize;
+        @apply mx-0 
+        flex
+        flex-shrink-0
+        cursor-pointer
+        items-center
+        justify-center
+        overflow-hidden
+        whitespace-normal
+        rounded-xl
+        bg-cover
+        bg-center
+        text-primaryGold
+        hover:bg-primaryGold
+        
+        md:rounded-[12px]
+        md:px-0
+        lg:rounded-[14px]
+        2xl:rounded-2xl;
+
+        button {
+          @apply h-full
+          w-full
+          border-none
+          transition-transform
+          duration-300;
+
+          img {
+            @include imageCommonStyle;
+            @apply object-contain;
+          }
+
+          div {
+            @apply flex
+            h-full
+            items-center
+            justify-center
+            text-center
+            font-semibold;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    .subCategoryListContainer {
+      @apply mt-2
+      flex
+      w-full
+      items-center
+      justify-center
+      gap-3
+      md:mt-3;
+
+      // .buttonBox {
+      //   @apply mr-0;
+
+      //   button {
+      //     @apply flex
+      //     items-center
+      //     whitespace-nowrap
+      //     rounded-full
+      //     border
+      //     border-solid
+      //     border-primaryGold
+      //     text-12
+      //     leading-3
+      //     text-primaryGold
+      //     md:text-16
+      //     md:leading-5;
+      //   }
+
+      //   .activeBtn {
+      //     @apply bg-primaryGold
+      //     font-medium;
+      //   }
+      //   .unActiveBtn {
+      //     @apply border-transparent
+      //     font-semibold;
+      //   }
+      // }
+    }
+  }
+}
+
+.truncateP {
+  @apply truncate
+      leading-5;
+
+  p {
+    @apply truncate;
+  }
+}
+.leadingP {
+  @apply leading-5;
+}
+
+.productRemarkLeading {
+  p {
+    @apply leading-6 md:leading-7 2xl:leading-8;
+  }
+}
+
+/*=============================ProductCard=========================*/
+.rootView {
+  @apply relative
+  w-full;
+
+  &.isMemberFavor {
+    @apply aspect-square;
+  }
+  &.horizontalMode {
+    @apply w-[240px]
+    lg:w-[290px];
+    flex-shrink: 0;
+  }
+
+  > .productCardInfo {
+    @apply my-6 
+    text-center 
+    text-14 
+    leading-[20px] 
+    text-primaryDark;
+
+    > .nameJp {
+      @apply whitespace-normal;
+    }
+    > .productName {
+      @apply mb-3 
+      w-full 
+      whitespace-normal 
+      px-2 
+      text-center 
+      text-23 
+      font-bold 
+      leading-8 
+      text-primaryDark 
+      md:mb-2
+      md:font-semibold
+      lg:px-3;
+
+      &.isHorizontal {
+        @apply mx-auto
+        px-5
+        text-20
+        xl:px-5;
+      }
+      &.isAddonMode {
+        @apply text-18;
+      }
+    }
+    > .attribute {
+      @apply whitespace-normal 
+      px-4 
+      text-12 
+      leading-[18px] 
+      text-primaryDark/60
+      md:mb-2 
+      md:px-0 
+      md:text-14;
+    }
+  }
+}
+
+.ImageBox {
+  @apply relative
+  aspect-square
+  h-auto
+  w-full
+  rounded-2xl
+  bg-transparent 
+  object-cover
+  shadow-imageInnerShadow;
+
+  > .buttonBox {
+    @apply absolute 
+    left-0 
+    top-0 
+    z-10 
+    flex 
+    h-auto 
+    w-full 
+    items-center 
+    p-5;
+
+    > .favorButton {
+      @apply aspect-square 
+      h-12
+      h-auto
+      w-12;
+    }
+  }
+
+  > .backgroundBox {
+    @apply relative 
+    h-full 
+    w-full 
+    overflow-hidden 
+    rounded-2xl;
+
+    > .badgeContainer {
+      @apply absolute 
+      bottom-0 
+      left-0 
+      w-full;
+
+      > .badgeRow {
+        @apply mx-5 
+        flex 
+        items-center 
+        justify-between 
+        xl:mx-6;
+
+        &.withoutRemark {
+          @apply mb-5
+          md:mb-10;
+        }
+        &.withRemark {
+          @apply mb-6;
+        }
+
+        > .badgeBox {
+          @apply flex
+          gap-2 
+          xl:gap-4;
+
+          > .badgeDiv {
+            @apply aspect-square
+            h-auto
+            w-[30px]
+            2xl:w-[45px];
+
+            &.favorBadge {
+              @apply 2xl:w-[35px];
+            }
+            &.horizontalBadge {
+              @apply w-[28px]
+              md:w-[32px]
+              2xl:w-[44px];
+            }
+
+            > img {
+              @include imageCommonStyle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.addonProductCard {
+  @apply truncateP 
+  flex 
+  w-full 
+  items-center
+  px-5
+  py-3
+  backdrop-blur-lg
+  backdrop-filter;
+
+  > .discountTagIcon {
+    @apply mr-4 
+    aspect-square
+    h-auto
+    w-[20px]
+    lg:w-[28px];
+  }
+
+  > div .p {
+    @apply mb-1 
+    mr-2
+    text-18
+    font-semibold
+    leading-4;
+  }
+  > div span {
+    @apply text-13
+    leading-4;
+  }
+}
+
+.addonRemark {
+  @apply flex
+  w-full
+  px-5
+  py-3
+  backdrop-blur-lg
+  backdrop-filter
+  lg:px-5
+  2xl:px-6;
+}
+
+/*===============================Badges===========================*/
+
+.badgeBoxContainer {
+  @apply w-auto;
+
+  .badgeBoxRow {
+    @apply mb-3
+    flex 
+    flex-row 
+    items-center 
+    gap-2;
+
+    &.lessThanOne {
+      @apply justify-center;
+    }
+    &.modeLeft {
+      @apply justify-start;
+    }
+    .badgeBox {
+      @apply aspect-[3.06/1] 
+      h-auto
+      w-[90px] 
+      bg-cover 
+      bg-center 
+      bg-no-repeat 
+      lg:aspect-[3.85/1] 
+      md:w-[90px] 
+      2xl:w-[130px];
+
+      & img {
+        @include imageCommonStyle;
+        @apply bg-primaryGrey;
+
+      }
+    }
+    span {
+      @apply block 
+      text-end  
+      font-medium 
+      text-primaryGold;
+
+      &.textStyle {
+        @apply 
+        text-xl
+        lg:text-lg 
+        2xl:text-xl;
+      }
+    }
+  }
+}
+
+/*===============================Others===========================*/
+.convertToGold {
+  filter: invert(49%) sepia(8%) saturate(1536%) hue-rotate(358deg) brightness(96%) contrast(81%) !important;
+}

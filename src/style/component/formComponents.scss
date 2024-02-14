@@ -1,0 +1,140 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* =========== Select =========== */
+  .selectContainer {
+    @apply relative flex w-full flex-col;
+  }
+
+  .selectLabelContainer {
+    @apply flex items-center;
+  }
+
+  .selectBoxContainer {
+    @apply flex h-[50px] items-center justify-between rounded-full border border-primaryGold px-2 py-3;
+  }
+
+  .selectChevron {
+    @apply mr-[5px] h-auto w-[23px];
+  }
+
+  .selectList {
+    @apply absolute z-40 flex w-full flex-col gap-1 overflow-y-scroll rounded-b-[20px] border-none bg-white shadow-lg;
+  }
+
+  .selectListItem {
+    @apply flex h-[47px] cursor-pointer items-center border-b-[0.2px] border-lightGrey border-opacity-[50%] bg-opacity-25 px-5 py-[8px] hover:bg-primaryGold05;
+
+    span {
+      @apply text-[14px] leading-5;
+    }
+  }
+
+  /* =========== Input =========== */
+  .inputContainer {
+    @apply relative flex w-full flex-col gap-1;
+  }
+
+  // .inputMobileForContact {
+  //   @apply relative flex flex-wrap items-center justify-start gap-2;
+  // }
+
+  // .inputEle {
+  //   @apply w-full border-primaryGold px-[12px] pl-[20px] font-semibold placeholder-primaryGold placeholder-opacity-40 placeholder:pl-[5px] placeholder:font-medium;
+  // }
+
+  .inputCreditCardCvvPopup {
+    @apply absolute right-[5px] top-[50px] h-auto w-[27px] -translate-x-1/2 -translate-y-1/2 transform xl:right-0 xl:top-[66px] 2xl:top-[50px];
+  }
+
+  /* =========== checkbox =========== */
+  .checkboxLabel {
+    @apply text-[14px] leading-5 lg:text-[14px];
+  }
+
+  .checkboxInput {
+    @apply mr-[3px] appearance-none bg-transparent focus:ring-0 focus:ring-offset-0;
+  }
+
+  /* =========== titleChip =========== */
+  .titleChipContainer {
+    @apply flex w-full flex-col gap-1;
+  }
+
+  .titleChipButtonContainer {
+    @apply flex  gap-[12px] md:w-full md:gap-[16px];
+  }
+
+  .titleChipButton {
+    @apply flex min-w-[64px] items-center justify-center rounded-[16px] border-[1px] border-primaryGold p-[16px] text-[14px] leading-5
+            text-primaryDark sm:text-[14px]  md:text-primaryGold lg:rounded-[40px] xl:px-4 xl:py-[.9rem] xl:text-[16px];
+  }
+}
+
+@layer utilities {
+  /* =========== Select =========== */
+  .labelText {
+    @apply block pb-[3px] text-[14px] font-semibold leading-5 lg:text-primaryGold xl:text-[16px];
+  }
+
+  .selectDisable {
+    @apply bg-[#DDD7CE];
+  }
+
+  .selectedValue {
+    @apply bg-primaryGold/40 font-semibold text-primaryGold;
+  }
+
+  .selectItems {
+    @apply flex items-center  pl-4 pt-[2px] leading-5;
+  }
+
+  .selectRegionAndDistrict {
+    @apply top-[-200px] max-h-[188px] min-h-[200px] border-0 lg:top-[53px];
+  }
+
+  .selectRegionAndDistrictScroll {
+    @apply top-[75px] max-h-[188px] overflow-y-scroll border;
+  }
+
+  /* =========== Input =========== */
+  // .inputInvalid {
+  //   @apply focus:border-primaryPurple focus:outline-none focus:ring-1 focus:ring-primaryPurple;
+  // }
+
+  // .inputValid {
+  //   @apply focus:border-primaryGold focus:bg-transparent focus:outline-none focus:ring-1 focus:ring-primaryGold;
+  // }
+
+  // .inputMobileDefault {
+  //   @apply bg-primaryGold/40 text-primaryGold;
+  // }
+
+  /* =========== checkbox =========== */
+  .checkboxTermsLabel {
+    @apply mt-[-5px] w-full text-primaryDark md:w-full lg:text-primaryGold;
+  }
+
+  .checkboxBtn {
+    @apply text-[12px]  leading-5 text-primaryDark  lg:text-[14px] lg:text-primaryGold;
+  }
+
+  .checkboxTermsInput {
+    @apply mt-[-2px]  border-primaryDark text-primaryDark checked:bg-primaryDark lg:border-primaryGold lg:text-primaryGold;
+  }
+
+  .checkboxNonTermsInput {
+    @apply border-[1.65px] border-primaryGold text-primaryGold;
+  }
+
+  /* =========== titleChip =========== */
+
+  .titleChipButtonSelected {
+    @apply bg-primaryGold font-semibold text-white;
+  }
+}
+
+.inputPlaceholder {
+  letter-spacing: 0.44px;
+}

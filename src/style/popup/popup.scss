@@ -1,0 +1,245 @@
+@tailwind components;
+@tailwind utilities;
+
+@mixin cardSecondContainerCommonStyle {
+  @apply absolute left-1/2 top-[33%] h-[350px] w-fit -translate-x-1/2 -translate-y-1/2 rounded-[16px] bg-white sm:top-[41%];
+}
+
+@mixin userSecondContainerCommonStyle {
+  @apply absolute left-1/2 top-[39%] h-[350px] w-fit -translate-x-1/2 -translate-y-1/2 rounded-[16px] bg-white;
+}
+
+@mixin transactionDatePickerBtnCommonStyle {
+  @apply w-1/2 rounded-full border-primaryGold;
+}
+
+@layer components {
+  .popupMask {
+    @apply fixed left-0 top-0 z-[1099] h-full w-full bg-[#E8E4DE]/80 backdrop-blur-[1px];
+  }
+
+  .popupContainer {
+    @apply fixed left-1/2 top-1/2 z-[60] flex h-fit w-full max-w-[350px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-[24px] bg-white px-[20px] py-[40px] shadow-md md:max-w-[400px] md:px-[43px] md:py-10 lg:px-[30px] lg:py-[50px];
+  }
+
+  .popupTitles {
+    @apply text-center;
+  }
+
+  .popupTitleMsgOne {
+    @apply text-center text-[16px] font-semibold;
+  }
+
+  .popupTitleLoginMsg {
+    @apply block text-[16px] font-semibold text-primaryPurple;
+  }
+  .popupTitleNormalMsg {
+    @apply text-center text-[16px] font-semibold leading-6;
+  }
+
+  .popupRegistrationInfoButton {
+    @apply mt-5 flex w-full flex-col gap-4 text-center font-semibold;
+
+    button {
+      @apply rounded-full border  bg-primaryPurple py-4 text-white;
+      border-width: 1px;
+    }
+  }
+
+  .popupRegistrationLeavePageButtons {
+    @apply mt-5 flex w-full flex-col gap-4 text-center font-semibold;
+
+    a {
+      @apply rounded-full bg-primaryPurple py-4 text-white;
+    }
+
+    button {
+      @apply rounded-full border border-primaryPurple py-4 text-primaryPurple;
+    }
+  }
+
+  .popupButtons {
+    @apply mt-8 w-full rounded-full bg-primaryPurple py-5 text-[14px] leading-5 text-white md:leading-4  lg:text-[18px];
+  }
+
+  .popupFloatingBtnContainer {
+    @apply absolute bottom-6 flex w-[90%] space-x-[15px] md:bottom-0;
+
+    div {
+      @apply absolute top-[50px] flex w-full items-center justify-center;
+
+      button {
+        @apply h-auto w-[100px] pt-4;
+
+        img {
+          @apply h-auto w-[100px];
+        }
+      }
+    }
+  }
+
+  .cardPopupBG {
+    @apply h-auto  w-full md:mt-0;
+  }
+
+  .userCardPopupBG {
+    @apply mx-auto  h-full w-full object-cover;
+  }
+
+  .cardPopupCardNum {
+    @apply text-[18px] font-normal leading-4 text-primaryGold;
+  }
+
+  .cardPopupQRCode {
+    @apply block h-auto w-[200px] object-contain;
+  }
+
+  .cardPopupCloseBtn {
+    @apply h-[75px] w-[75px];
+
+    img {
+      @apply h-full w-full object-cover;
+    }
+  }
+
+  /* ================ transaction Date Picker popup ================ */
+  .transactionDatePickerPopupBtns {
+    @apply flex w-full justify-between gap-[15px] pt-4 text-[18px] font-medium leading-5 text-primaryGold;
+
+    button {
+      @include transactionDatePickerBtnCommonStyle;
+      &:nth-child(1) {
+        @apply border-[1px] py-3;
+      }
+      &:nth-child(2) {
+        @apply py-4;
+      }
+    }
+  }
+
+  .infoPopupText1Btn {
+    @apply rounded-full border  py-4 text-[18px] leading-5  xl:py-5 xl:text-[22px];
+  }
+
+  .infoPopupText2Btn {
+    @apply w-[50%]  rounded-full bg-primaryPurple py-4 text-[18px] leading-5 text-white xl:w-1/2 xl:py-5 xl:text-[22px];
+  }
+}
+
+@layer utilities {
+  .cardPopupContainer {
+    @apply relative top-[5%] xl:top-[10%];
+  }
+
+  .cardPopupCreditCardSecondContainer {
+    @include cardSecondContainerCommonStyle;
+    @apply h-[400px] w-[280px];
+  }
+
+  .cardPopupUserCardSecondContainer {
+    @include userSecondContainerCommonStyle;
+    @apply h-[345px] w-[270px];
+  }
+
+  .cardPopupThirdContainer {
+    @apply mx-auto flex h-full max-w-[300px] flex-col items-center justify-center gap-4;
+  }
+
+  .cardPopupInnerContainer {
+    @apply flex  items-center justify-center gap-[10px];
+
+    p {
+      @apply text-[1.5rem] font-bold leading-6 tracking-[0.2px] text-mineShaft;
+    }
+
+    span {
+      @apply text-[1.7rem] font-extrabold text-mineShaft;
+    }
+  }
+
+  .cardPopupContentContainer {
+    @apply flex flex-col  text-center;
+
+    h4 {
+      @apply pb-[6px] text-[16px] leading-4;
+    }
+    .memberTier span {
+      @apply text-18;
+    }
+  }
+
+  .cardPopupMsgContainer {
+    @apply mt-[1rem] flex flex-col items-center;
+
+    p {
+      @apply w-[250px] pb-2 text-center text-[12px] font-normal leading-[18px] tracking-[0.2px] text-secondaryLightGold2 lg:w-[282px] lg:pb-4;
+    }
+  }
+
+  .userPopupMsgContainer {
+    @apply mt-[2rem] flex flex-col items-center;
+
+    p {
+      @apply w-[250px] pb-2 text-center text-[14px] font-semibold leading-[18px] tracking-[0.2px] text-secondaryLightGold2 lg:w-[282px] lg:pb-4;
+    }
+  }
+
+  /* ================ Info popup ================ */
+  .infoPopupContainer {
+    @apply fixed left-1/2 top-1/2 z-[60] flex h-fit w-[343px] -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-[24px] bg-white px-4 text-center sm:h-[200px] sm:w-1/2 md:h-[250px] md:w-[40%] md:justify-evenly md:px-9 lg:w-[35%] lg:justify-center lg:gap-7 xl:h-[300px] xl:w-[30%] xl:gap-0 xl:px-[40px];
+    span {
+      @apply block w-[70%] py-[40px] text-[20px] font-semibold leading-6 md:w-[80%] md:py-6 md:text-[22px] lg:w-[65%] xl:text-[24px]  2xl:w-[72%] 2xl:py-9 2xl:text-[30px] 2xl:leading-9;
+    }
+  }
+
+  .infoPopupBtnsContainer {
+    @apply z-[60] flex w-full justify-center gap-4 pb-[16px] xl:pt-5 2xl:px-0;
+  }
+
+  /* ================ transaction Date Picker popup ================ */
+  .transactionDatePickerPopupContainer {
+    @apply mx-auto mt-[10rem] h-fit w-[93%] rounded-[24px] bg-white py-12 sm:w-[55%] lg:mt-[15rem] lg:w-[40%] xl:w-[30%];
+  }
+
+  .transactionDatePickerResetContainer {
+    @apply flex flex-col gap-[10px] px-[3rem];
+
+    div {
+      @apply flex justify-between;
+
+      h3 {
+        @apply text-[20px] font-semibold leading-5;
+      }
+
+      button {
+        @apply flex items-center gap-[4px];
+
+        img {
+          @apply h-auto w-[18px];
+        }
+
+        span {
+          @apply text-[16px] leading-5 text-primaryGold;
+        }
+      }
+    }
+    span {
+      @apply block text-[12px] leading-5 xl:text-[14px];
+    }
+  }
+
+  .transactionDatePickerFormContainer {
+    @apply flex flex-col gap-6 px-[1rem] pt-[34px] lg:px-[3rem];
+
+    label {
+      @apply flex w-full flex-col gap-3 xl:flex-row xl:items-center;
+
+      span {
+        @apply text-[14px] leading-4 text-primaryGold lg:w-[69px] xl:text-[18px];
+      }
+      div {
+        @apply flex w-full gap-[10px];
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Philosopher";
+  font-style: bold;
+  font-weight: 800;
+  src: url("./Philosopher-Bold.ttf") format("truetype");
+}
+
+.philosopher {
+  font-family: "Philosopher", sans-serif;
+}

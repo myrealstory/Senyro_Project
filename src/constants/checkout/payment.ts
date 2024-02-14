@@ -1,0 +1,29 @@
+export enum PAYMENT_METHOD {
+  // default, init means the method haven't selected
+  INIT = "00000",
+
+  VISA_MASTER = "20000",
+  AMEX = "20001",
+  TOKENIZATION_VISA_MASTER = "20020",
+  TOKENIZATION_AMEX = "20021",
+
+  ALIPAY_CN = "20100",
+  ALIPAY_HK = "20101",
+
+  WECHAT_PAY_CN = "20200",
+  WECHAT_PAY_HK = "20201",
+
+  APPLE_PAY = "20300",
+  APPLE_PAY_VM = "20301",
+  APPLE_PAY_AMEX = "20302",
+
+  GOOGLE_PAY = "20400",
+  GOOGLE_PAY_VM = "20401",
+  GOOGLE_PAY_AMEX = "20402",
+
+  PAYME = "20500",
+
+  OCTPOUS = "20600",
+
+  BOC_PAY = "20700",
+}

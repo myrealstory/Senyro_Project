@@ -1,0 +1,115 @@
+.customInput,
+.customInput::before,
+.customInput::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.customInput input[type="date"] {
+  border: 1px solid #8d7a5b;
+  width: 16.7vw;
+  margin-right: 1.25vw;
+}
+
+@media screen and (max-width: 1100px) {
+  .customInput input[type="date"] {
+    width: 275px;
+    margin-right: 0;
+  }
+}
+::-webkit-calendar-picker-indicator {
+  background-image: url("../../images/icons/Icon_Chevron-gold@3x.png");
+  opacity: 1;
+}
+
+.customSelect {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("../../images/icons/Icon_Chevron-gold@3x.png");
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: 13px 6.5px;
+  padding: 14px 18px;
+  height: 68px;
+  line-height: 1;
+  font-size: clamp(1rem, 0.8409rem + 0.4242vw, 1.35rem);
+  color: #8d7a5b;
+}
+@media screen and (max-width: 640px) {
+  .customSelect {
+    height: 50px;
+    background-size: 10px 5px;
+    background-position: 93% 50%;
+    font-size: 16px;
+  }
+}
+
+.customSelect::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  border-color: #333 transparent transparent;
+  background-image: url("../../images/icons/Icon_Down@3x.png");
+}
+
+.customSelect option {
+  background-color: white;
+  border: none;
+}
+
+.goldCheckBox[type=checkbox] {
+  -webkit-appearance: none!important;
+  -moz-appearance: none;
+	-o-appearance:none;
+  appearance: none;
+  outline: none!important;
+  content: none!important;
+  border: 1px solid #8d7a5b;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  color: transparent!important;
+}
+.goldCheckBox[type=checkbox]:focus {
+  outline: none!important;
+  content: none!important;
+  outline-offset: 0!important;
+  --tw-ring-offset-width: 1px!important;
+  --tw-ring-offset-color: transparent!important;
+  --tw-ring-color: #8d7a5b!important;
+  --tw-ring-offset-shadow: none!important;
+  --tw-ring-shadow: none!important;
+  --tw-ring-inset: none!important;
+  box-shadow: none!important;
+  border-radius: 4px;
+}
+.goldCheckBox[type=checkbox]:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  border: 1px solid #8d7a5b;
+  color: transparent!important;
+  border-radius: 4px;
+}
+.goldCheckBox[type=checkbox]:checked:before {
+  content: "✓";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border: 1px solid #8d7a5b;
+  color: white!important;
+  background-color: #8d7a5b;
+  border-radius: 4px;
+}

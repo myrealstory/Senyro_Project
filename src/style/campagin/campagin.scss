@@ -1,0 +1,246 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
+// ================= common class ==========================
+
+.campaignImageCommonClass{
+    @apply h-[202px] w-[343px] xl:h-auto xl:w-[560px] 2xl:w-[600px] 2xl:h-auto;
+}
+
+.campaignBtnCommonClass{
+    @apply h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 tracking-[-0.36px] text-white font-medium ;
+}
+
+.basicPTag {
+    @apply text-[14px] font-normal leading-[22px] tracking-[-0.28px] lg:text-[18px]
+      xl:text-[22px] xl:leading-10 xl:tracking-[-0.48px];
+    }
+
+
+
+//=================  campaign layout ================= 
+.campaignLayout{
+   @apply mx-auto my-[31px]  xl:mt-[49px] ;
+   
+}
+
+
+//=================  campaign home page ================= 
+.campaignMainContainer{
+    @apply flex w-full flex-col items-center py-3 xl:py-[4rem];
+
+    h1{
+        @apply pb-6 text-center text-[24px] font-semibold leading-5 text-primaryGold lg:pb-9 lg:text-[32px] lg:leading-10 xl:text-[40px] xl:leading-[51px] ;
+    }
+
+    p{
+        @apply mb-5 text-center text-[14px] font-medium leading-[22px] tracking-[-0.28px] md:text-[18px] md:leading-7 lg:mb-8
+        2xl:mb-14 2xl:text-[22px] 2xl:leading-8 2xl:tracking-[-0.44px] lg:w-[700px] xl:w-auto;
+    }
+
+    section{
+        @apply flex flex-col items-center justify-center gap-5 md:w-full md:flex-row md:items-start lg:gap-10 2xl:gap-14;
+
+        div{
+            @extend .campaignImageCommonClass;
+        }
+    }
+}
+
+
+.campaignImage{
+    @extend .campaignImageCommonClass;
+    @apply rounded-lg object-cover md:rounded-none ;
+}
+
+.campaignBtnMobile{
+    @extend .campaignBtnCommonClass;
+    @apply gap-3 flex text-[18px] ;
+}
+
+.campaignBtnDesktop{
+    @extend .campaignBtnCommonClass;
+    @apply mt-10 hidden text-xl font-medium md:flex md:w-[342px] md:gap-4 md:text-[20px] lg:h-[75px] lg:w-[321px] lg:py-4
+     xl:mt-16 2xl:mb-5 2xl:h-[90px] 2xl:text-[26px] 2xl:tracking-[-0.64px];
+}
+
+// =============== campaign form - page.tsx =========================
+
+.campaignFormMainContainer {
+    @apply flex w-full flex-col items-center py-3 ;
+
+    h1{
+       @apply pb-6 text-center text-[24px] font-semibold leading-5 text-primaryGold lg:pb-9 lg:text-[32px] lg:leading-10 xl:text-[40px] xl:leading-[51px]; 
+    }
+}
+
+.campaignFormWhiteBGContainer{
+    @apply lg:rounded-[24px] lg:bg-white lg:px-7 lg:w-[769px] lg:py-14 lg:shadow-lg xl:px-14;
+
+    h2{
+        @apply block text-[20px] font-semibold leading-6 text-black lg:text-primaryGold xl:text-[2.5rem] xl:font-medium xl:leading-[2.625rem];
+    }
+    
+}
+
+.campaignFormContentContainer{
+    @apply w-full pb-7 text-center lg:text-left;
+
+}
+
+.campaignFormWhiteBgP1{
+    @apply hidden pt-6 text-[15px] font-normal leading-5 text-primaryDark lg:block xl:text-[1.25rem] xl:leading-[1.875rem] xl:tracking-[-0.4px];
+}
+.campaignFormWhiteBgP2{
+    @apply block pt-1 text-[18px] font-semibold leading-6 tracking-[0.0125rem] text-primaryDark lg:hidden ;
+}
+
+
+// =============== campaign form - campaignForm.tsx =========================
+
+.campaignFormComponent{
+    @apply flex w-full flex-col gap-9;
+}
+
+.campaignFormNameDiv{
+    @apply flex flex-col lg:flex-row lg:gap-9;
+}
+
+.campaignFormDatePickerParentDiv{
+    @apply flex w-full flex-wrap justify-center sm:flex-nowrap sm:justify-center;
+}
+
+.campaignFormDatePickerComponent{
+    @apply mb-5 flex h-[50px] w-full flex-col gap-4 md:mb-0 md:mr-[20px] md:h-full md:w-[320px] md:flex-row;
+}
+
+.campaignFormDatePickerContainerClasses{
+   @apply h-[50px] w-full flex-[4] z-[1];
+}
+
+.campaignFormDateSelectorContainer{
+    @apply flex h-[50px] w-full justify-between gap-1 sm:w-auto md:mt-0 md:w-[380px] md:gap-5;
+}
+
+.campaignFormreCAPTCHA{
+    @apply flex items-center justify-center overflow-visible;
+}
+
+.campaignFormBtnMobileDiv{
+    @apply flex items-center justify-center;
+}
+
+.campaignFormBackBtnMobile{
+    @apply w-[40%] text-[18px] font-medium tracking-[-0.36px] text-primaryGold;
+}
+
+.campaignFormSubmitBtnnMobile{
+    @apply h-[56px] w-[60%] flex-1 rounded-full  text-[18px] font-medium  tracking-[-0.36px]  text-white  xl:py-[21px];
+}
+
+.campaignFormSubmitBtnDesktop{
+    @apply hidden w-full items-center justify-center rounded-full md:flex md:h-[56px] md:py-5 text-lg font-medium leading-4  text-white  xl:py-[21px];
+}
+
+// =============== campaign form - submitted page =========================
+
+.campaignSubmittedMainContainer{
+    @apply mx-auto flex w-full flex-col gap-[8rem] md:gap-3; 
+
+    h1{
+      @apply pb-6 text-center text-[24px] font-semibold leading-5 text-primaryGold lg:pb-9 lg:text-[32px] lg:leading-10;
+    }
+
+    section{
+        @apply mb-20 flex flex-col items-center justify-center lg:flex-row  lg:items-start lg:gap-[4rem];
+    }
+}
+
+.campaignSubmittedWhiteBgDiv{
+    @apply my-16 flex w-full flex-col items-center justify-center gap-[24px] md:my-0 lg:flex md:h-[390px] 
+    md:w-[700px] md:bg-white md:p-8 md:shadow-lg md:rounded-[10px];
+}
+
+.campaignSubmittedIconDiv{
+    @apply flex h-[60px] w-[60px] items-center justify-center rounded-full bg-primaryGold2 xl:mb-[15px] ;
+}
+
+.campaignSubmittedIcon{
+    @apply h-[30px] w-[30px] self-center;
+}
+
+.campaignSubmittedContentContainer{
+    @apply flex w-full flex-col items-center justify-center ;
+
+    h2{
+        @apply text-center text-[24px] font-semibold leading-5 text-primaryGold;
+    }
+
+    p{
+        @apply w-full text-center text-[14px] leading-6
+    }
+}
+
+.campaignSubmittedBtnMobile{
+    @apply mx-auto flex h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 text-[18px] font-medium
+    tracking-[-0.36px] text-white md:w-[25vw] md:min-w-[300px] lg:py-4 
+}
+
+.campaignSubmittedBtnDesktop{
+    @apply mx-auto hidden h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 text-[18px] font-medium tracking-[-0.36px]
+    text-white md:flex md:w-[238px] lg:py-4;
+}
+
+// =================== join campaign form =============================
+
+.joinCampaginFormBanner{
+    @apply h-auto max-h-[530px] w-full object-cover md:-mt-1
+}
+
+
+.joinCampaginFormSection{
+    @apply mx-auto my-[31px] flex w-full flex-col items-center px-4 py-3 sm:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[45%];
+
+    h1{
+        @apply pb-6 text-center text-[24px] font-semibold leading-5 text-primaryGold lg:pb-9 lg:text-[32px] lg:leading-10 xl:text-[40px] xl:leading-[51px];
+    }
+
+    
+}
+
+.joinCampaginFormSectionUl{
+    @extend .basicPTag;
+    @apply flex list-disc flex-col items-center justify-center pb-6 text-primaryGold lg:pb-9;
+}
+
+.joinCampaginFormP1{
+    @extend .basicPTag;
+    @apply pb-6 text-center text-primaryGold4 lg:pb-9;
+}
+
+
+.joinCampaginFormWhiteBgContainer{
+    @apply mt-8 lg:rounded-[24px] lg:bg-white lg:px-7 lg:py-14 lg:shadow-lg xl:px-14;
+}
+
+.joinCampaginFormWhiteBgContentContainer{
+    @apply w-full pb-7 text-center lg:text-left;
+
+    h3{
+        @apply block text-[20px] font-semibold leading-6 text-primaryGold xl:text-[2.5rem] xl:font-medium xl:leading-[2.625rem];
+    }
+
+    
+}
+
+.joinCampaginFormWhiteBgContentP1{
+    @apply hidden pt-6 text-[15px] font-normal leading-5 text-primaryDark lg:block xl:text-[1.25rem] xl:leading-[1.875rem] xl:tracking-[-0.4px];
+}
+
+.joinCampaginFormWhiteBgContentP2{
+    @apply block pt-1 text-[18px] font-semibold leading-6 tracking-[0.0125rem] text-primaryDark lg:hidden;
+}
+

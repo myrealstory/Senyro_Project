@@ -1,0 +1,979 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../generalSize.scss";
+
+.basicPTag {
+  @apply text-[14px] font-normal leading-[22px] tracking-[-0.28px] lg:text-[18px]
+    xl:text-[22px] xl:leading-10 xl:tracking-[-0.48px];
+}
+
+.contactPageHeroBanner {
+  @apply h-[240px]  w-full sm:h-[26vw]  md:-mt-1;
+}
+
+//   ------------- general page -----------------
+
+.generalPageTitle {
+  @apply text-center text-[22px] font-semibold leading-[22px] tracking-[-0.44px] text-black  xl:mt-8 xl:text-h3 xl:leading-[51px] xl:tracking-[-0.64px];
+}
+
+.generalPageSubTitle {
+  @extend .basicPTag;
+  @apply mb-3 text-center text-primaryGold opacity-60 lg:mb-8;
+}
+
+.generalPageMainLayOut {
+  @apply mt-5 flex flex-col;
+}
+
+.generalPagePictireContainer {
+  @apply flex  h-auto w-full items-center justify-center;
+}
+
+.generalPagePicture {
+  @apply h-full w-full object-cover;
+}
+
+.generalPageArticleContainer {
+  @apply flex flex-col items-center justify-center md:items-start md:justify-between md:gap-5;
+}
+
+// --------------------- T&C ----------------------------
+
+.TermsAndConditionsMainContainer {
+  @apply my-10 md:my-20;
+}
+
+// ---------------------- contact form ---------------------------
+
+.contactPageBannerImage {
+  @apply h-full w-full object-cover  md:-mt-1;
+}
+
+.contactPageMainContainer {
+  @apply flex flex-col items-center;
+}
+
+.contactPageSection {
+  @apply mt-5 lg:flex lg:gap-11 lg:py-9 xl:gap-[50px] xl:pb-14 2xl:gap-[5.25rem];
+}
+
+.contactPageWhiteBgContainer {
+  @apply w-full px-4 sm:px-32 md:px-40 lg:w-[50%] lg:rounded-2xl lg:bg-white lg:px-7 lg:pb-9 lg:pt-4 lg:shadow-lg xl:px-10 2xl:px-14;
+}
+
+.contactPageContentContainer {
+  @apply w-full pb-7 text-center lg:py-7 lg:text-left xl:pt-7;
+
+  h1 {
+    @apply block text-[20px] font-semibold leading-6 text-primaryGold lg:text-[24px] lg:font-medium lg:leading-[2.625rem];
+  }
+}
+
+.contactPageDesktopSubTitle {
+  @apply hidden pt-6 text-[15px] font-normal leading-5 text-primaryDark lg:block lg:pt-4 lg:text-[14px] lg:leading-[1.5rem] lg:tracking-[-0.4px];
+}
+
+.contactPageMobileSubTitle {
+  @apply block pt-2 text-[14px] font-semibold leading-[1.35rem] tracking-[0.0125rem] text-primaryDark lg:hidden lg:pt-1 lg:text-[18px] lg:leading-6;
+}
+
+.contactPageRightSideParentContainer {
+  @apply px-4 text-center md:md:px-40 md:pt-4 lg:w-1/2 lg:px-0 lg:pt-0 lg:text-left;
+}
+
+// ============== contactPageRightSide(ContactItems)=====================
+
+.ContactItemDivCommonClass {
+  @apply flex flex-col items-start justify-start gap-4;
+}
+
+.ContactItemH3CommonClass {
+  @apply mt-7 block text-[16px] font-semibold leading-5 lg:mt-1 lg:text-[18px] xl:text-[24px] 2xl:text-[30px];
+}
+
+.ContactItemsUl {
+  @apply flex w-full flex-col gap-6 py-11 lg:gap-8 lg:pt-0 xl:gap-[3.25rem];
+
+  h2 {
+    @apply mb-10 block text-[18px] font-medium leading-6 tracking-[0.2px] lg:mb-0 lg:text-[22px] lg:leading-9 2xl:pr-10 2xl:text-[28px] 2xl:leading-[3rem] 2xl:tracking-[-0.72px];
+  }
+
+  li {
+    @apply flex items-start justify-start gap-[18px];
+  }
+}
+
+.ContactItemsImages {
+  @apply h-auto w-[17px] self-center xl:w-[20px];
+}
+
+.ContactItemsImagePhone {
+  @extend .ContactItemsImages;
+  @apply mt-7 pt-[2px] lg:mt-0;
+}
+
+.ContactItemsImageLocation {
+  @extend .ContactItemsImages;
+  @apply mt-6 lg:mt-0 xl:-mt-2 2xl:-mt-1;
+}
+
+.ContactItemsEmailContainer {
+  @extend .ContactItemDivCommonClass;
+  @apply lg:gap-4 xl:gap-6;
+
+  h3 {
+    @apply block text-[16px] font-semibold leading-5 lg:text-[18px] xl:text-[24px] 2xl:text-[30px];
+  }
+}
+
+.ContactItemsEmailDiv {
+  @apply text-left xl:flex xl:flex-col;
+
+  a {
+    @apply block text-[16px] leading-5 text-primaryGold underline lg:leading-6 xl:text-[18px] 2xl:text-[22px];
+  }
+
+  span {
+    @apply block text-[14px] font-semibold leading-5 text-primaryMine lg:leading-6 xl:mt-[6px] 2xl:text-[18px];
+  }
+}
+
+.ContactItemsHotLineContainer {
+  @extend .ContactItemDivCommonClass;
+  @apply lg:gap-4 xl:gap-6;
+
+  h3 {
+    @extend .ContactItemH3CommonClass;
+  }
+}
+
+.ContactItemsHotLineDiv {
+  @apply text-left xl:flex xl:flex-col;
+
+  h4 {
+    @apply text-[16px] leading-5 text-primaryGold lg:leading-6 xl:text-[18px] 2xl:text-[22px];
+  }
+
+  span {
+    @apply mt-[6px] text-[14px] font-semibold leading-5 text-primaryMine lg:leading-6 2xl:text-[18px];
+  }
+}
+
+.ContactItemsAdressDiv {
+  @extend .ContactItemDivCommonClass;
+  @apply w-[90%] text-left lg:w-auto lg:gap-4 xl:gap-6;
+
+  h3 {
+    @extend .ContactItemH3CommonClass;
+  }
+
+  span {
+    @apply w-full text-[14px] leading-5 text-primaryGold lg:text-[16px] lg:leading-6 xl:text-[18px] 2xl:text-[22px] 2xl:leading-8;
+  }
+}
+
+// =================== contact form itself =============================
+
+.ContactFormClass {
+  @apply flex w-full flex-col gap-7;
+}
+
+.ContactFormNameContainer {
+  @apply flex flex-col lg:flex-row lg:gap-8;
+}
+
+.ContactFormOrderReciptMsgContainer {
+  @apply flex flex-col gap-7;
+}
+
+.ContactFormReCAPTCHA {
+  @apply flex items-center justify-center;
+}
+
+.ContactFormMobileSubmitBtn {
+  @apply h-[56px] w-full flex-1 rounded-full text-[18px] font-medium leading-4 tracking-[-0.36px] xl:py-[21px];
+}
+
+.ContactFormDesktopSubmitBtn {
+  @apply hidden h-[50px] w-full items-center justify-center rounded-full  text-[17px] font-medium leading-4 text-white  md:flex  xl:py-[21px];
+}
+
+// ================== about layout ======================
+
+.aboutPageHeroBanner {
+  @apply h-auto max-h-[530px] w-full object-cover  md:-mt-1;
+}
+
+.aboutPageLayoutMainComponent {
+  @apply mx-auto mb-14 w-full;
+}
+
+.aboutPageLayoutAsideComponent {
+  @apply mx-auto flex w-[360px] justify-center pb-4 sm:pb-6 lg:pb-6 2xl:pb-9;
+
+  // ul{
+  //   @apply flex items-center justify-between gap-3 text-center text-[16px] text-xl font-semibold leading-4 lg:justify-center lg:gap-8;
+  // }
+
+  // li{
+  //   @apply flex h-[52px] w-[110px] md:w-[140px] items-center justify-center rounded-[14px] leading-6 lg:w-[190px] 2xl:h-[62px] 2xl:w-[262px];
+  // }
+}
+
+.aboutPageAsideLinkBtns {
+  @apply text-[15px] font-semibold tracking-[-0.3px] lg:text-[18px] 2xl:text-[24px] 2xl:tracking-[0px];
+}
+
+// ================== about senryo tab page ======================
+
+.aboutSenRyoTabMainContainer {
+  @apply flex flex-col;
+
+  section {
+    @apply flex flex-col items-center justify-center md:flex-row md:items-start md:justify-between md:gap-5;
+  }
+  figure {
+    @apply mb-7 flex aspect-square w-full items-center justify-center md:aspect-auto md:min-h-[192.29px] md:min-w-[333.78px] lg:h-auto lg:w-auto;
+  }
+
+  article {
+    @apply w-full md:w-[50%] md:pl-8 lg:pl-4 lg:pr-4 2xl:pl-12;
+
+    h2 {
+      @apply mb-2 text-[22px] font-semibold leading-[22px] tracking-[-0.44px] text-primaryGold md:mb-4 xl:text-25 2xl:mb-10 2xl:leading-[25px] 2xl:tracking-[-0.64px];
+    }
+
+    p {
+      @apply pb-6 pr-5 text-[14px] font-normal leading-[22px] tracking-[-0.28px] md:pr-0 lg:pr-5 lg:text-[18px] lg:leading-8 lg:tracking-[-0.36px] xl:text-24   2xl:leading-10 2xl:tracking-[-0.48px];
+    }
+  }
+}
+
+.aboutSenRyoTabImage {
+  @apply h-full w-full rounded-none object-cover;
+}
+
+// ================== Recruitment tab page ======================
+
+.recruitmentPageWrapper {
+  @apply w-full px-4 sm:px-48;
+}
+
+.recruitmentPageSubTagsContainer {
+  @apply mx-auto flex w-full max-w-[360px] justify-center gap-4 px-4 sm:px-0 md:max-w-[500px];
+}
+
+.recruitmentPageSubTagContainer {
+  @apply w-1/2 md:w-[250px];
+
+  button {
+    @apply h-[40px] w-full text-[12px] font-semibold leading-4 md:text-[14px] lg:h-[42px] lg:text-[16px];
+  }
+}
+
+.recruitmentPageSubTagBenefitsIsActivated {
+  @apply rounded-full bg-primaryGold text-primaryGold05;
+}
+
+.recruitmentPageSubTagOpportunitiesIsActivated {
+  @extend .recruitmentPageSubTagBenefitsIsActivated;
+  @apply px-[25px] py-[7px] lg:py-3 xl:py-4;
+}
+
+// ================== Recruitment tab - CareerCard ======================
+
+.CareerCardH1 {
+  @apply whitespace-pre-line py-8 text-center text-[18px] font-semibold leading-7 tracking-[-0.36px] text-primaryGold lg:py-11 lg:text-[22px] lg:tracking-[-0.64px];
+}
+
+.CareerCardArticle {
+  @apply flex flex-col gap-4 lg:gap-6;
+}
+
+.CareerFoldUnitContainer {
+  @apply flex flex-col gap-4;
+}
+
+.CareerFoldUnitRegularUl {
+  @apply flex justify-between gap-4 border-b pb-3 pr-4;
+
+  h3 {
+    @apply text-[16px] font-semibold leading-5 tracking-[-0.32px] lg:text-20 xl:text-24 xl:leading-7  2xl:leading-10 2xl:tracking-[-0.56px];
+  }
+}
+
+.CareerFoldUnitIcon {
+  @apply h-auto w-[20px] lg:w-[24px];
+}
+
+.CareerFoldUnitIsActiveUl {
+  @apply list-outside list-disc px-5 lg:px-10;
+
+  li {
+    @apply mb-5 text-[14px] font-normal leading-5 tracking-[-0.28px] 
+    lg:text-17 lg:tracking-[-0.33px] xl:text-20 2xl:leading-[30px] 2xl:tracking-[-0.44px];
+  }
+}
+// ================== Recruitment tab - BenefitCard/CareerPathCard  ======================
+@layer components {
+  .CareerPathCardSection {
+    @apply flex items-center justify-center;
+
+    .CareerPathCardTextTopContainerDiv {
+      @apply flex h-[64px] w-full max-w-full flex-col items-center justify-center self-center rounded px-5 py-3.5;
+      p {
+        @apply mb-0 ml-0.5 mt-0.5 justify-center self-center text-center font-medium tracking-tight text-white lg:text-h3;
+        // text-stone-500
+      }
+    }
+  }
+
+  .CareerPathCardTextLeftContainerDiv {
+    @apply mt-2 flex h-[64px] flex-col items-center justify-center self-stretch rounded bg-primaryGold2 px-5;
+    p {
+      @apply self-center text-center font-medium tracking-tight text-primaryGold lg:text-h3;
+      // text-stone-500
+    }
+  }
+
+  .CareerPathCardTextRightContainerDiv {
+    @apply mt-2 flex h-[64px] flex-col items-center justify-center self-stretch rounded bg-primaryGold3 px-5;
+    p {
+      @apply justify-center self-center text-center font-medium tracking-tight text-deepPrimaryGold lg:text-h3;
+      // text-stone-500
+    }
+  }
+
+  .CareerPathCardTextHalfContainerDiv {
+    @apply flex w-6/12 flex-col items-stretch leading-[normal];
+  }
+
+  .CareerPathCardArrowIcon {
+    @apply mt-2 aspect-[1] w-[30px] max-w-full self-center object-contain object-center;
+  }
+
+  .CareerPathCardBigIcon {
+    @apply ml-px aspect-[1] w-[60px] max-w-full self-center object-contain object-center;
+  }
+}
+// ================== Recruitment tab - BenefitCard ======================
+
+.BenefitCardTitle {
+  @apply py-[28px] text-[22px] font-semibold leading-5 text-primaryGold sm:text-[24px] lg:pt-[35px] lg:text-center lg:font-semibold lg:leading-[22px] lg:tracking-[-0.44px] 2xl:text-[30px]  2xl:leading-[25px] 2xl:tracking-[-0.64px];
+}
+
+.BenefitCardImage {
+  @apply z-[1] ml-px aspect-[1] w-[22px] max-w-full self-center object-contain object-center lg:w-[48px];
+}
+
+.BenefitCardSegmentContainer {
+  @apply mb-5 flex h-fit items-center;
+}
+
+.BenefitCardSeperateLine {
+  @apply h-[2px] w-full border-[1px] border-primaryGold;
+}
+
+.BenefitCardDetailUl {
+  @apply list-outside list-disc px-8 lg:px-14;
+
+  li {
+    @apply mb-3 text-[14px] font-medium leading-5 tracking-[-0.28px] lg:text-[17px] lg:tracking-[-0.33px] 2xl:mb-4 2xl:text-[22px] 2xl:leading-8 2xl:tracking-[-0.44px];
+  }
+}
+
+// ===================== Job Application =============================
+
+.jobApplicationIcon {
+  @apply aspect-[1] w-[30px] max-w-full self-center object-contain object-center;
+}
+
+.jobApplicationMainContainer {
+  article {
+    @apply my-3 flex flex-col gap-5 md:items-center md:text-center lg:gap-7 xl:w-full 2xl:gap-6;
+
+    h1 {
+      @apply text-[22px] font-semibold leading-5 text-primaryGold lg:leading-[22px] lg:tracking-[-0.44px] 2xl:pb-2 2xl:text-[30px] 2xl:leading-[25px] 2xl:tracking-[-0.64px];
+    }
+
+    p {
+      @apply w-full text-[14px] font-normal leading-[22px] tracking-[-0.28px] lg:text-[16px] lg:leading-7 xl:px-3  xl:text-[20px] 2xl:tracking-[-0.4px];
+    }
+  }
+}
+
+.jobApplicationPrivacySpan {
+  @apply mb-10 text-[14px] leading-[22px] tracking-[0.28px] lg:pt-5 lg:text-[16px] xl:text-[20px] 2xl:tracking-[-0.4px];
+}
+
+.jobApplicationBtnCommonClass {
+  @apply h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 
+  text-[18px] font-medium tracking-[-0.36px] text-white;
+}
+
+.jobApplicationBtnDesktop {
+  @extend .jobApplicationBtnCommonClass;
+  @apply hidden md:flex md:w-[285px] md:gap-4 lg:h-[68px] lg:py-4 lg:text-[20.5px] 2xl:mb-5;
+}
+
+// ============== Quality Ingredient Page ====================
+
+.qualityIngredientMainContainer {
+  @apply w-full pb-12 pt-6 xl:py-[4rem];
+
+  h1 {
+    @apply pb-6 text-center text-[24px] font-semibold leading-5 text-primaryGold lg:pb-9 lg:text-[32px] lg:leading-10 xl:text-[40px] xl:leading-[51px];
+  }
+
+  section {
+    @apply flex flex-col items-center justify-center gap-5 lg:w-full lg:gap-10 2xl:gap-14;
+  }
+}
+
+.qualityIngredientFirstP {
+  @apply mb-5 text-center text-[14px] font-normal leading-5 tracking-[-0.28px] md:text-[18px] md:leading-7 lg:mb-8
+  2xl:mb-10 2xl:text-[22px] 2xl:leading-8 2xl:tracking-[-0.44px];
+}
+
+.qualityIngredientParentDiv {
+  @apply flex flex-col items-center justify-center gap-2 lg:flex-row lg:items-start lg:gap-6 xl:gap-7;
+
+  article {
+    @apply flex flex-col gap-2 pt-2 text-center lg:max-w-[50%] lg:pt-0 lg:text-left;
+
+    h2 {
+      @apply text-[22px] font-medium leading-7 text-primaryGold lg:text-[30px] 2xl:text-[38px] 2xl:leading-[43px];
+    }
+
+    h3 {
+      @apply text-[16.5px] font-normal leading-[22px] text-primaryGold lg:mb-5 lg:text-[24px] 2xl:mb-8 2xl:text-[30px] 2xl:font-normal;
+    }
+
+    p {
+      @apply text-[14px] font-normal leading-[22px] tracking-[-0.3px] lg:text-[20px] lg:leading-8 2xl:text-[26px] 2xl:leading-10 2xl:tracking-[-0.52px];
+    }
+  }
+}
+
+.qualityIngredientImageDiv {
+  @apply h-auto w-[full] lg:h-[319px] lg:w-[327px] 2xl:min-h-[400px] 2xl:min-w-[680px];
+}
+
+.qualityIngredientImage {
+  @apply h-full w-full object-cover;
+}
+
+// ============== FAQ ====================
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.FAQMainContainer {
+  @apply mx-auto mb-[4.75rem] mt-7 flex flex-col items-center gap-3 md:my-16 md:gap-5  xl:mb-[6.5625rem] xl:mt-[3.25rem];
+}
+
+.FAQMainTitle {
+  @apply mb-[8px] text-[22px] font-semibold leading-[1.625rem] md:text-h3 xl:mb-5 xl:text-[2.5rem] xl:leading-[2.625rem];
+}
+
+.FAQMajorCatogorySection {
+  @apply mx-auto flex w-full justify-center gap-2 xl:gap-6;
+}
+
+.FAQMajorCatogoryBtn {
+  @apply w-1/2 rounded-[12px] py-[16px] text-sm font-semibold leading-5 md:text-[16px] lg:w-[250px] xl:text-[1.3rem] 2xl:text-[1.5rem];
+}
+
+.FAQOnlineOrderingContentContainer {
+  @apply mx-auto flex w-full flex-col gap-4 px-4 xl:max-w-[950px] xl:gap-[24px];
+}
+
+.FAQAccordionContainer {
+  @apply mx-auto flex w-full max-w-[500px] flex-col justify-around gap-5 lg:max-w-[600px];
+}
+
+.FAQPanelContainer {
+  @apply flex flex-col rounded-[10px] bg-white shadow-lg;
+
+  ol {
+    @apply relative flex h-[50px] items-center justify-between gap-4 px-10 lg:h-[60px]  xl:px-14;
+
+    li {
+      @apply list-item list-decimal text-[14px] font-semibold leading-4 md:text-[18px]  md:leading-6 2xl:leading-7;
+
+      h3 {
+        @apply w-full py-4 font-medium  md:pr-4 lg:py-6 2xl:pr-5;
+      }
+    }
+  }
+}
+
+.FAQCustomCategoryContainer {
+  @apply no-scrollbar mb-1 flex w-full items-center overflow-x-auto 2xl:w-auto;
+}
+
+.FAQCustomCategoryOnlineOrdering {
+  @apply justify-start gap-1 md:gap-2 2xl:justify-center;
+}
+
+.FAQCustomCategoryMembership {
+  @apply mr-10 justify-center gap-3;
+}
+
+.FAQCustomCategorybtns {
+  @apply w-fit whitespace-nowrap rounded-full px-3 py-[10px] text-[12px] font-medium leading-4 md:text-[16px] xl:px-[1.875rem] xl:py-3 2xl:text-[1.25rem] 2xl:font-normal;
+}
+
+.FAQAnswerText {
+  @apply whitespace-pre-line px-5 py-5 text-[14px] font-normal  leading-5 tracking-[-0.28px] md:text-[18px]
+          md:font-medium md:leading-6 lg:px-7 lg:py-7 xl:px-9 2xl:leading-7;
+}
+
+.FAQPanelButton {
+  @apply absolute right-4 top-[45%] md:right-8;
+}
+
+// ============== TermsCard ====================
+
+.TermsCardPTag {
+  @apply text-[14px] font-normal leading-[36px] tracking-[-0.28px] lg:text-[18px] lg:leading-9 lg:tracking-[-0.36px];
+}
+
+.TermsCardTitleDiv {
+  @apply flex flex-col gap-1 pb-10 md:gap-3 xl:pb-8;
+
+  h1 {
+    @apply text-[22px] font-semibold leading-7 md:text-[32px] md:leading-[42px];
+  }
+
+  span {
+    @apply text-[14px] font-medium leading-5 text-lightGrey md:text-[24px];
+  }
+}
+
+.TermsCardContentArticle {
+  @apply flex flex-col gap-4 pb-8 lg:gap-6 2xl:pb-14;
+}
+
+.TermsCardH2 {
+  @apply mb-7 text-[18px] font-bold leading-5 md:text-[24px];
+}
+
+.TermsCardH3 {
+  @apply text-[24px] font-semibold leading-[22px] tracking-[-0.28px] lg:text-[24px] lg:leading-[40px] lg:tracking-[-0.48px];
+}
+
+.TermsCardMemberColumn {
+  @apply flex-col gap-4 py-7 md:gap-5 lg:mx-auto lg:flex-row lg:gap-6 xl:gap-7;
+
+  figure {
+    @apply mb-4 h-fit rounded-t-[23px] text-center sm:mx-12 md:mx-28 lg:mx-0;
+  }
+}
+
+.TermsCardMemberDayText {
+  @apply block bg-white px-7 py-3 text-[14px] font-semibold leading-5 xl:text-[16px] 2xl:py-6;
+}
+
+.TermsCardMemberDescriptionText {
+  @apply block rounded-b-[23px] bg-white px-7 py-8 text-[14px] font-semibold leading-5 xl:px-7 xl:text-[16px] xl:leading-6;
+}
+
+.TermsCardMemberTireNameText {
+  @apply absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 transform text-[16px] font-semibold leading-[26px] tracking-[-0.4px] text-primaryGold05;
+}
+
+// ================== NewsOffersPage ======================
+
+.NewsOffersPageMainContainer {
+  @apply mb-9 mt-6 2xl:mx-auto 2xl:max-w-[1920px];
+}
+
+.NewsOffersPageH1 {
+  @apply mt-7 text-center text-[22px] font-semibold leading-5 md:text-h3 md:leading-7 lg:text-h2 lg:leading-9 xl:text-[2.5rem] xl:leading-10;
+}
+.NewsOffersPromotionBarContainer {
+  @apply mb-2 mt-3 w-full rounded-lg bg-secondaryLightSand  py-2 md:my-7;
+
+  p {
+    @apply px-5 text-center text-[14px] font-normal leading-5 tracking-[-0.28px] xl:text-[16px] xl:leading-6 xl:tracking-[-0.02081rem];
+  }
+}
+
+// ================== Dine in menu Page ======================
+
+.menuPageMainContainer {
+  @apply my-4 md:mt-6 xl:mt-8 2xl:mx-auto 2xl:max-w-[1920px];
+}
+
+.menuPageH1 {
+  @apply py-2 text-center text-[22px] font-semibold leading-5 md:text-[30px] md:leading-6 xl:text-[2.5rem] xl:leading-10;
+}
+
+.menuPageDeliverServiceSection {
+  @apply flex w-full flex-col justify-center gap-5 bg-[#F9F8F8] py-[38px] text-center md:py-[50px];
+
+  h3 {
+    @apply text-[20px] font-semibold leading-[22px] md:text-[28px] md:leading-[44px];
+  }
+
+  h4 {
+    @apply text-[14px] font-medium leading-[22px] text-primaryGold opacity-60 md:text-[24px] md:leading-[27px];
+  }
+
+  p {
+    @apply mx-auto px-6 text-center text-[14px] font-normal leading-[19px] md:px-20 md:text-[22px] md:leading-[30px] lg:w-[70%] lg:px-[11rem];
+  }
+}
+
+.menuPageDeliverServiceBtn {
+  @apply mx-auto w-full max-w-[343px] rounded-full bg-greenBlue py-[12px] xl:mt-3 xl:max-w-[300px];
+}
+
+.menuPageDeliverServiceIcon {
+  @apply mx-auto h-auto w-[120px] self-center;
+}
+
+// ====================== carousel =======================
+
+.carouselCommonClass {
+  @apply absolute top-[50%]  z-[100] flex h-[2.57rem] w-[2.57rem] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-secondaryLightSand;
+}
+
+.carouselBtns {
+  @apply h-[12px] w-[5px] lg:h-[0.8vw] lg:w-[0.416vw];
+}
+
+.carouselSwiperDiv {
+  @apply ml-[17px] rounded-t-[7px] bg-primaryGold2 pb-[2px] pt-[3px] font-semibold text-primaryGold;
+}
+
+.carouselTitleSection {
+  @apply flex w-full flex-col items-center justify-center;
+}
+
+.carouselTitleFigcaption {
+  @apply flex flex-col items-center gap-4 px-4 py-6;
+
+  h2 {
+    @apply block text-center text-[22px] font-semibold leading-5;
+  }
+
+  h3 {
+    @apply block text-center text-[16px] leading-4 text-primaryGold4;
+  }
+}
+
+.carouselDownloadSection {
+  @apply mb-[20px] mt-[15px] 
+  w-auto
+  cursor-pointer
+  rounded-full
+  bg-primaryGold
+  px-[18px] 
+  py-[18px]  
+ 
+  md:mt-[10px]
+  md:py-[18px];
+}
+
+// =================== news detail page ===============================
+
+.newsDetailPageMainContainer {
+  @apply w-full pb-14 pt-3 md:pb-14 md:pt-7 xl:py-14 xl:pb-[4rem] 2xl:pb-[4.5rem];
+
+  h1 {
+    @apply block pb-3 text-center text-[22px] font-semibold md:text-[40px];
+  }
+}
+
+.newsDetailPageOtterAriticle {
+  @apply relative flex flex-col gap-5 md:flex-row md:justify-start md:gap-11;
+
+  figure {
+    @apply relative md:h-1/2 md:w-1/2;
+  }
+}
+
+.newsDetailPageNewTag {
+  @apply ml-[17px]  rounded-t-[7px] bg-primaryGold2 pb-[2px] pt-[3px] font-semibold text-primaryGold;
+}
+
+.newsDetailPageImage {
+  @apply h-full w-full object-cover shadow-lg;
+}
+
+.newsDetailPageContentAriticle {
+  @apply flex flex-col items-center gap-3 md:w-1/2 md:items-start md:pt-5;
+}
+
+.newsDetailPageContentTitleContainer {
+  @apply flex flex-col items-center gap-2 md:items-start md:gap-4 lg:gap-2;
+
+  h2 {
+    @apply pt-[10px] text-[20px] font-semibold leading-5 tracking-[0.2px] md:text-[27px] lg:text-[30px] lg:leading-9 2xl:text-[38px] 2xl:leading-[49.4px] 2xl:tracking-[0.562px];
+  }
+
+  h3 {
+    @apply text-[14px] font-normal leading-4 tracking-[-0.2px] text-primaryGold md:text-[20px] lg:leading-9 2xl:text-[28px] 2xl:leading-[50px] 2xl:tracking-[-0.562px];
+  }
+}
+
+.newsDetailPageTagsContainer {
+  @apply flex w-full justify-center gap-2 py-[10px] md:justify-start;
+}
+
+.newsDetailPageContentPTagContainer {
+  @apply flex w-full flex-col gap-5;
+
+  p {
+    @apply text-[14px] font-normal leading-5 sm:leading-7 md:leading-6 lg:text-[18px] lg:leading-8 2xl:text-[22px] 2xl:leading-9;
+  }
+}
+
+.newsDetailPageBtnMobile {
+  @apply flex h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 text-[16px] 
+  font-normal leading-5 text-white;
+}
+
+.newsDetailPageBtnDesktop {
+  @apply hidden h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 text-[16px] leading-5 text-white md:absolute md:bottom-0 md:right-0 
+  md:flex md:w-[200px] md:font-medium lg:w-[300px] lg:text-[22px];
+}
+
+// =============== storelocation ======================
+
+@layer components {
+  .popup-scrollbar {
+    @apply overflow-y-scroll;
+  }
+
+  .popup-scrollbar::-webkit-scrollbar {
+    @apply w-[7px] rounded-[20px];
+  }
+
+  .popup-scrollbar::-webkit-scrollbar-track {
+    @apply rounded-[20px] bg-[#31210833];
+  }
+
+  .popup-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-[10px] bg-[#8d7a5b];
+  }
+
+  @media screen and (max-width: 1023px) {
+    .no-scrollbarMobile::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbarMobile {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+.MapContainerDiv {
+  @apply fixed left-0 top-0 w-full;
+}
+
+.CustomizedPinDiv {
+  @apply z-[999] h-[52px] w-[52px];
+}
+
+.CustomizedPinImg {
+  @apply h-full w-full object-cover;
+}
+
+.storeLocationMobileGpsBtnContainer {
+  @apply fixed right-3 top-[7rem] z-[9] h-[52px] w-[52px] bg-transparent sm:right-6   lg:hidden;
+}
+.modal-transition {
+  transition: height 0.5s ease-in-out;
+}
+.storeCards-transition {
+  transition: height 0.05s ease-in-out;
+}
+
+.storeLocationMobileGpsBtn {
+  @apply h-full w-full self-center object-cover;
+}
+
+.storeUpModalMainContainer {
+  @apply fixed bottom-[0.1px] left-0  w-full rounded-t-[24px] bg-primaryGold1 px-4 
+  sm:px-[6rem]  md:px-[8rem] lg:absolute lg:left-[10%] lg:top-[14%] 
+    lg:w-[500px] lg:flex-col  lg:rounded-[25px] lg:bg-white 
+  lg:px-[40px] lg:pb-0;
+}
+
+.storeUpModalTitleDiv {
+  @apply hidden w-full lg:mb-5 lg:flex lg:justify-between xl:mb-7;
+
+  h1 {
+    @apply text-[24px] font-medium leading-5 text-primaryGold lg:text-[30px] lg:tracking-[1.3px];
+  }
+}
+
+.storeLocationDesktopGpsBtnContainer {
+  @apply flex items-center gap-2;
+
+  span {
+    @apply text-[17px] font-medium leading-5 text-primaryGold;
+  }
+}
+
+.storeUpModalMobileToggleContainer {
+  @apply flex justify-center py-4 lg:hidden;
+
+  button {
+    @apply h-1 w-[48px] rounded-full border-[3px] border-primaryGold opacity-40;
+  }
+}
+
+.storeUpModalSelectContainer {
+  @apply flex w-full justify-center gap-1 sm:gap-5 lg:gap-4;
+}
+
+.storeUpModalOnInfoContainer {
+  @apply flex w-full items-center gap-[5px] py-[14px] md:items-start;
+}
+
+.storeUpModalOnInfoTooltipIcon {
+  @include imageCommonStyle;
+}
+
+.storeCardMainContainer {
+  @apply flex w-full flex-col gap-5 pb-4 lg:pr-[10px] lg:pt-0 xl:pr-0 2xl:max-w-[518px];
+}
+
+.storeCardMainBorder {
+  border-left: 8px solid rgba(141, 122, 91, 1); /* 100% opacity for left border */
+  border-top: 0.83px solid rgba(141, 122, 91, 0.35); /* 40% opacity for top border */
+  border-right: 0.83px solid rgba(141, 122, 91, 0.35); /* 40% opacity for right border */
+  border-bottom: 0.83px solid rgba(141, 122, 91, 0.35); /* 40% opacity for bottom border */
+}
+
+.storeCardUnitContainer {
+  @apply relative flex cursor-pointer flex-col gap-[13px] rounded-[13.7px] border border-primaryGold bg-white px-4 py-5 
+  hover:bg-[#F3F4F6] sm:px-6 md:gap-[14px] lg:shadow-lg;
+}
+
+.storeCardTitleContainer {
+  @apply flex w-full items-baseline justify-between;
+}
+
+.storeCardGpsIsOnDiv {
+  @apply flex items-center justify-between gap-[2px];
+
+  span {
+    @apply text-[14px] font-bold leading-5 tracking-[-0.226px] text-primaryGold;
+  }
+}
+
+.storeCardRestaurantLicense {
+  @apply block text-left text-[12px] leading-6 tracking-[0.2px] text-lightGrey md:text-[14px];
+}
+
+.storeCardOtherInfoContainer {
+  @apply flex items-start gap-[4px];
+}
+
+.storeCardLocationIcon {
+  @apply h-full w-full object-cover;
+}
+
+.storeCardAddress {
+  @apply block text-left text-[14px] font-semibold leading-5 md:w-[100%] 2xl:w-full;
+}
+
+.storeCardDirectionMessage {
+  @apply mt-1 block text-left text-[12px] font-normal leading-5 text-mineShaft lg:leading-[13.76px];
+}
+
+.storeCardReminderMessage {
+  @apply mt-1 block text-left text-[12px] font-normal leading-5 text-primaryPurple lg:mt-2  lg:text-[13px] lg:leading-[13.76px];
+}
+
+.storeCardPhoneNumberFaxContainer {
+  @apply flex items-center gap-[30px];
+}
+
+.storeCardPhoneDiv {
+  @apply flex items-center gap-[10px];
+}
+
+.storeCardFaxDiv {
+  @apply flex items-center gap-[14px];
+
+  p {
+    @apply text-[14px] font-medium leading-4 text-primaryGold;
+  }
+
+  span {
+    @apply text-[14px] leading-6;
+  }
+}
+
+.StoreTimeAccordionOutterContainer {
+  @apply flex w-full flex-col items-start lg:ml-[1.4rem];
+}
+
+.StoreTimeAccordionInnerSectionContainer {
+  @apply flex w-full max-w-[400px] items-center justify-between gap-6 pb-2
+         pl-[25px] lg:max-w-full lg:gap-[21px] lg:pl-0;
+}
+
+.StoreTimeAccordionColorBoxContainer {
+  @apply flex w-[120px]  items-center justify-center gap-2 rounded-[4.8px] px-1 py-[8px]  lg:w-[130px]  lg:px-[11px] lg:py-[9px];
+}
+
+.StoreTimeAccordionColorBoxCircle {
+  @apply h-[3.363px] w-[3.363px] rounded-full lg:h-[5.4px] lg:w-[5.4px];
+}
+
+.StoreTimeAccordionColorBoxText {
+  @apply text-[8.6px] font-semibold leading-[12.106px] lg:text-[11px] lg:leading-[10px] lg:tracking-[1px];
+}
+
+.StoreTimeAccordionToggleDiv {
+  @apply flex items-center justify-end gap-3;
+
+  span {
+    @apply block text-[14px] font-normal leading-4 sm:text-[16px] lg:leading-[18px] lg:tracking-[0px];
+  }
+}
+
+.StoreTimeAccordionClockIcon {
+  @apply h-auto w-[20px] self-center lg:hidden;
+}
+
+.StoreTimeAccordionTimeTableOutterDiv {
+  @apply w-full pl-[25px] pr-[15px] md:pr-[5rem] lg:pl-0 lg:pr-[8em];
+}
+
+.StoreLocationTimeTableContainer {
+  @apply w-full;
+
+  .StoreLocationTimeTableContainertbody {
+    @apply w-full max-w-[300px] lg:max-w-full;
+
+    .StoreLocationTimeTableContainertr {
+      @apply flex w-full items-center justify-between border-b-[1px] border-dotted border-secondaryLightGold2 py-2 pr-5 lg:pr-0;
+
+      .StoreLocationTimeTableContainerth {
+        @apply text-left text-[12px] font-normal leading-5 tracking-[-0.2px] text-primaryGold sm:text-[14px] lg:font-medium lg:tracking-[0px] 2xl:text-[16px];
+      }
+
+      .StoreLocationTimeTableContainertd {
+        @apply text-[12px] font-normal leading-[18px] tracking-[-0.2px] sm:text-[14px] lg:tracking-[0px] 2xl:text-[16px];
+      }
+    }
+  }
+}

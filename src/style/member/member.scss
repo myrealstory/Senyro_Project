@@ -1,0 +1,1904 @@
+@tailwind components;
+@tailwind utilities;
+
+@mixin receiptTdCommonStyle {
+  @apply text-12 font-medium leading-4 text-primaryDark lg:text-14;
+}
+
+@mixin receiptAmountTableCommonStyle {
+  @apply text-12 leading-4 lg:text-14;
+}
+
+@mixin receiptInfoCommonStyle {
+  @apply py-1 text-left lg:border-b-[1px] lg:border-dotted lg:border-primaryGold1 lg:pb-3;
+}
+
+@mixin instoreReceiptInfoThCommonStyle {
+  @apply text-12 font-medium leading-4 text-[#282828] md:text-14 lg:w-1/2 lg:pb-1;
+}
+
+@mixin instoreReceiptDescriptionTrCommonStyle {
+  @apply flex items-start justify-between;
+}
+
+@mixin instoreReceiptDescriptionThLeft {
+  @apply text-start text-12 font-semibold leading-4 md:text-16;
+}
+
+@mixin instoreReceiptDescriptionThRight {
+  @apply text-right text-12 leading-4 md:text-16;
+}
+
+@layer components {
+  /* ================================================ Profile ================================================*/
+  .profileTotalMsgs {
+    @apply absolute left-[15px] top-[-13px] flex  h-[26px] w-[26px] items-center justify-center rounded-full bg-primaryGold lg:left-[20px] lg:h-[28px] lg:w-[28px];
+  }
+
+  .profileLogoutBtn {
+    @apply flex h-full w-full max-w-full flex-col items-center justify-center gap-[5px] px-[7px] text-center;
+
+    img {
+      @apply h-[23px] w-[23px] self-center;
+    }
+
+    span {
+      @apply text-12 leading-3 text-primaryGold;
+    }
+  }
+
+  .inboxAndEditContainer {
+    @apply w-full lg:ml-[25rem] lg:max-w-[600px] 2xl:ml-[36rem];
+  }
+
+  /* ================================================ Member Profile ================================================*/
+  .memberProfileContainer {
+    @apply mt-4 flex flex-col gap-6 pb-[6rem] lg:my-[22px] lg:flex lg:flex-row lg:gap-7 lg:pr-0 xl:h-auto xl:pb-0;
+  }
+
+  /* ================================================ Member Profile Card ================================================*/
+
+  .memberBasicCardContainer {
+    @apply relative h-fit w-full px-4 lg:px-0;
+
+    h2 {
+      @apply pt-[30px] text-center text-20 font-bold leading-5;
+    }
+  }
+
+  .memberBasicImage {
+    @apply absolute right-[-5px] top-[-25px] z-30 w-[60px] lg:hidden;
+
+    img {
+      @apply lg:h-auto;
+    }
+  }
+
+  .memberElitePrestigeCardContainer {
+    @apply flex flex-col px-4 lg:w-1/2 lg:px-0 xl:gap-7;
+  }
+
+  .memberElitePrestigeCardSecondContainer {
+    @apply mt-3 rounded-[18px] bg-white text-primaryGold shadow-lg lg:mt-0 lg:h-[450px]  xl:w-full;
+  }
+
+  .memberElitePrestigeCardTotalPoints {
+    @apply block pb-[5px] text-[2.5rem] font-bold leading-none text-primaryDark md:pb-[10px];
+  }
+
+  .memberElitePrestigeCardZeroPoints {
+    @apply block pb-[7px]  text-h1 leading-none text-primaryDark md:text-[3.2rem] md:font-semibold;
+  }
+
+  .memberElitePrestigeCardPointListTable {
+    @apply w-full;
+
+    thead {
+      @apply pb-6;
+      tr {
+        @apply flex w-full justify-around;
+
+        th {
+          @apply w-1/2 text-center font-bold leading-5 lg:text-14;
+        }
+      }
+    }
+
+    tbody {
+      @apply flex h-[180px] w-full flex-col;
+    }
+  }
+
+  .memberElitePrestigeCard {
+    @apply relative flex flex-col items-center py-[30px] md:px-0 lg:pb-4;
+
+    .memberElitePrestigeCarTitle {
+      @apply pb-6 text-16 font-bold leading-5 lg:pb-1;
+    }
+
+    .memberElitePrestigeCardQRCode {
+      @apply absolute right-[-5px] top-[-25px] z-30 w-[60px] lg:hidden;
+    }
+
+    .memberElitePrestigeCarRenderPoint {
+      @apply relative flex w-full flex-col items-center px-[2.5rem] md:w-full md:px-[3rem] lg:pt-8 2xl:px-[36px];
+
+      .memberElitePrestigeCardPoints {
+        @apply text-[46px] font-semibold xl:text-lg;
+      }
+      .memberElitePrestigeCardDot {
+        @apply absolute right-[2.3rem] top-[2.4rem] z-10 md:right-[2.9rem] md:top-[4.2rem]  2xl:right-[45px];
+      }
+
+      .memberElitePrestigeCardPts {
+        @apply inline-block w-full self-end pr-4 pt-[6px] text-right text-h3 font-light md:self-end md:pt-1 md:text-20;
+      }
+    }
+
+    .memberElitePrestigeCardWrapper {
+      @apply mx-auto w-full max-w-[300px] pt-3 sm:max-w-[400px] lg:max-w-[280px];
+
+      span {
+        @apply hidden lg:block lg:pl-2 lg:text-center lg:text-10;
+      }
+    }
+  }
+
+  .memberElitePrestigeCardLoadMore {
+    @apply flex w-full flex-col items-center justify-center;
+
+    button {
+      @apply my-9 h-[40px] w-[130px] rounded-full border-[1px] border-primaryGold lg:hidden;
+    }
+
+    span {
+      @apply w-[320px] text-center text-10 leading-normal md:w-full lg:hidden;
+    }
+  }
+
+  .memberHowToUpgradeContainer {
+    @apply flex w-full flex-col items-center gap-[16px] px-4 text-center lg:mt-0 lg:gap-5 lg:px-0 xl:gap-[1.3rem];
+
+    .memberHowToUpgradeContentContainer {
+      @apply flex flex-col gap-4 lg:mt-4;
+
+      h2 {
+        @apply pt-0 text-16 font-semibold leading-5 lg:text-18;
+      }
+
+      p {
+        @apply px-5 text-12 leading-5 text-primaryDark lg:text-14;
+      }
+    }
+
+    a {
+      @apply flex h-[50px] w-[175px] items-center justify-center rounded-full bg-primaryGold font-medium leading-5 text-white lg:w-[200px] xl:text-16;
+    }
+  }
+
+  /* ================================================ Transaction ================================================*/
+  .transactionSelectDateBtn {
+    @apply flex w-full items-center justify-between rounded-[8px]  px-5 py-3 text-white;
+
+    span {
+      @apply text-14 font-semibold leading-4 2xl:text-16;
+    }
+
+    img {
+      @apply h-auto w-[10px];
+    }
+  }
+
+  .transactionReceiptOrderDate {
+    @apply mb-[16px] ml-[-10px] flex h-[37px] w-[130px] items-center justify-center self-baseline rounded-r-[8px] bg-secondaryLightGold2 px-[14px] py-[8px] text-center text-16 font-semibold leading-4 text-primaryGold  sm:ml-0
+                lg:ml-[-1px] lg:h-[52px] lg:w-[130px] lg:rounded-l-none lg:rounded-r-[18px] lg:py-0 lg:text-18 lg:text-primaryGold  xl:w-[140px];
+  }
+
+  .transactionMobileReOrderBtn {
+    @apply flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border-[1px] border-primaryGold py-[12px] text-center text-16 font-medium leading-4 text-primaryGold sm:w-full sm:max-w-full;
+  }
+
+  .transactionMobileReceiptBTn {
+    @apply flex w-full items-center justify-center gap-[5px] rounded-full bg-primaryGold py-[12px] text-center text-16 font-medium leading-4 text-white sm:w-full sm:max-w-full;
+  }
+
+  .transactionWebReOrderBtn {
+    @apply flex w-[280px] cursor-pointer items-center justify-center gap-[5px] rounded-full border-[1px] border-primaryGold py-[16px] text-center text-14 font-medium text-primaryGold lg:flex  lg:h-12  lg:items-center lg:justify-center lg:py-0 xl:h-12;
+  }
+
+  .transactionWebReceiptBTn {
+    @apply flex w-[280px] cursor-pointer items-center justify-center gap-[5px] rounded-full  bg-primaryGold py-[18px] text-center text-14 font-medium text-white lg:flex lg:h-12 lg:items-center lg:justify-center lg:py-0 xl:h-12;
+  }
+
+  .transactionPickupSliderBtns {
+    @apply flex items-center justify-between;
+
+    h2 {
+      @apply pb-[6px] text-16 font-semibold  leading-5 text-primaryDark md:text-18 lg:text-primaryGold;
+    }
+    button {
+      @apply flex h-[40px] w-[40px] items-center justify-center rounded-[12px] border-b-2 bg-primaryGold text-base font-medium text-primaryGold md:text-24 lg:hidden;
+    }
+  }
+  .transactionPickupSliderDetails {
+    @apply flex flex-col gap-1 lg:py-3;
+
+    span {
+      @apply block text-12 leading-5 text-primaryDark md:text-14;
+    }
+  }
+
+  .transactionPickupSliderReorderBtn {
+    @apply hidden cursor-pointer leading-5 text-primaryGold lg:block lg:pt-2 lg:text-left lg:text-16 lg:font-medium lg:underline;
+  }
+
+  .transactionPickupSliderActionBtns {
+    @apply flex w-full flex-col gap-[12px] text-primaryGold lg:mt-[-1rem] lg:w-fit;
+
+    button {
+      @apply flex items-center justify-center  gap-[5px] rounded-[12px] bg-primaryGold py-[11px] text-base font-medium text-white lg:w-[125px] lg:rounded-full  lg:py-[9px] xl:w-[150px];
+
+      .pickupQRCodeBtnText {
+        @apply text-14;
+      }
+
+      .pickupReceiptBtnText {
+        @apply hidden text-xl lg:inline-block lg:text-14;
+      }
+    }
+
+    a {
+      @apply flex cursor-pointer items-center justify-center gap-[5px] rounded-[12px] border-2 border-primaryGold bg-white  py-[9px] text-14 font-medium text-primaryGold lg:w-[125px] lg:rounded-full lg:border-0  lg:bg-primaryGold  lg:text-white  xl:w-[150px];
+      span {
+        @apply text-14;
+      }
+    }
+  }
+
+  /* ================================================ Receipt ================================================*/
+
+  .receiptTdName {
+    @include receiptTdCommonStyle;
+    @apply w-[150px] py-2 text-14 xl:w-[60%];
+  }
+
+  .receiptTdQty {
+    @include receiptTdCommonStyle;
+    @apply text-center text-14;
+  }
+
+  .receiptSubtotal {
+    @include receiptTdCommonStyle;
+    @apply text-end text-14;
+  }
+
+  .receiptAmountTdDiscount {
+    @include receiptAmountTableCommonStyle;
+    @apply text-14 font-normal;
+  }
+
+  .receiptPaymentDetails {
+    @apply border-b-[1px] border-t-[1px] border-primaryDark py-[10px] pl-5 text-xl font-medium;
+  }
+
+  .receiptPaymentDetailsTableTr {
+    @apply flex justify-between lg:mb-[-5px];
+
+    tr {
+      @apply text-12 font-normal leading-4 lg:text-14;
+    }
+  }
+
+  .receiptDivider {
+    @apply w-full border-b-[1px] border-primaryDark;
+  }
+
+  .receiptInfoTd {
+    @apply py-2 text-14 leading-4 lg:text-16;
+  }
+
+  .receiptPickupInfoShowToStaff {
+    @apply w-full  text-center text-20 font-medium leading-8 lg:w-full lg:pb-0;
+  }
+
+  .receiptPickupInfoNo {
+    @apply text-center text-[42px] font-bold text-primaryGold;
+  }
+
+  .receiptPickupDetails {
+    @apply mb-4 flex flex-col gap-4;
+  }
+
+  .receiptTableRowTr {
+    @apply flex w-full items-center justify-between border-dotted border-secondaryLightGold2  md:gap-[122px];
+
+    th {
+      @apply w-[45%] py-2 text-left text-14 font-medium leading-5 text-primaryDark lg:w-[40%] lg:text-16;
+    }
+
+    td {
+      @apply w-[55%] py-2 text-14 font-medium leading-5 lg:w-[60%] lg:pl-0 lg:text-16;
+    }
+  }
+
+  .instoreReceiptInfoTableH3 {
+    @apply text-16 font-semibold leading-4 text-primaryDark lg:pb-4 lg:text-18;
+  }
+
+  .instoreReceiptInfoTable {
+    @apply mt-3 w-full table-auto text-primaryGold lg:border-b lg:border-primaryGold;
+
+    thead {
+      @apply text-left;
+
+      tr {
+        @apply gap-[82px] md:border-primaryGold lg:w-full lg:border-b-[1px] xl:py-1;
+      }
+    }
+    tbody {
+      @apply lg:border-b-[1px] lg:border-primaryGold;
+
+      tr {
+        @apply w-full gap-[82px] border-b-[1px] border-dotted border-primaryGold text-left lg:border-b-0;
+
+        td {
+          @apply text-14 leading-4 text-[#282828] lg:w-1/2 lg:py-4 lg:text-16 lg:text-primaryGold;
+
+          &:nth-child(1) {
+            @apply border-primaryGold py-1 font-semibold lg:py-3;
+          }
+
+          &:nth-child(2) {
+            @apply py-[21px] font-normal lg:py-0;
+          }
+        }
+      }
+    }
+  }
+
+  .instoreReceiptDescriptionTableContainer {
+    @apply mt-[30px] w-full rounded-[20px] bg-primaryGold1 lg:mt-0 lg:border-b lg:border-primaryGold lg:bg-transparent;
+
+    tbody {
+      @apply flex w-full flex-col px-4 py-2 text-left lg:px-0;
+
+      tr {
+        @include instoreReceiptDescriptionTrCommonStyle;
+
+        &:nth-child(1) {
+          @apply border-b-[1px] border-primaryDark/60 py-1 text-center lg:border-0 lg:py-0;
+        }
+
+        &:nth-child(2) {
+          @apply border-b-[1px] border-primaryDark/60 py-1 text-center lg:border-0 lg:py-0;
+        }
+
+        &:nth-child(3) {
+          @apply border-b-[1px] border-primaryDark/60 py-1 text-center lg:border-0 lg:py-0;
+        }
+
+        &:nth-of-type(4) {
+          @apply text-center;
+        }
+      }
+    }
+  }
+
+  .buttonDownloadAndPrint {
+    @apply flex h-[43px] w-[43px] items-center justify-center rounded-full border-[1px] border-primaryGold;
+  }
+
+  .instoreReceiptSummaryTitleMobile {
+    @apply w-full text-center text-24 font-semibold leading-5 text-primaryGold lg:hidden;
+  }
+
+  .instoreReceiptSummaryTitleWeb {
+    @apply hidden w-full text-center text-24 font-semibold text-primaryGold lg:block;
+  }
+
+  .instoreReceiptSummaryTr {
+    @apply w-full lg:border-b-[1px] lg:border-dotted lg:border-primaryGold1;
+  }
+
+  .instoreReceiptSumaryTitleTd {
+    @apply w-1/2 py-2 text-14 font-normal leading-4 text-primaryGold md:text-16 lg:py-3 xl:font-semibold;
+  }
+
+  .instoreReceiptSumaryInfoTd {
+    @apply w-1/2 py-2 text-14 leading-4 md:text-16 lg:py-3 lg:text-primaryGold;
+  }
+  /* ================================================ MemberShip ================================================*/
+  .membershipQuestionTitle {
+    @apply pb-4 text-16 font-semibold leading-5;
+  }
+
+  .membershipQuestionDescription {
+    @apply text-13 font-light leading-5;
+  }
+
+  .membershipFaqPanelImgAnimation {
+    @apply h-auto w-[15px] rotate-180 transform  duration-300 ease-in-out;
+  }
+
+  /* ================================================ Saved Card ================================================*/
+  .savedCardsContainer {
+    @apply md:mx-auto md:my-10 md:w-full md:max-w-[500px] md:rounded-[18px] lg:mx-0 lg:mt-[21px] lg:w-full lg:max-w-[650px];
+  }
+
+  .savedCardsHasCardsContainer {
+    @apply h-fit w-full rounded-[20px] p-6 lg:mt-[16px] lg:max-w-full lg:p-0;
+
+    ul {
+      @apply flex flex-col gap-4 md:gap-[24px];
+    }
+  }
+
+  .savedCardsAddCardWebBtn {
+    @apply mx-auto  hidden h-[60px] items-center justify-center rounded-full bg-primaryGold md:flex md:w-full md:gap-[5px] lg:mr-0 lg:w-[40%] 2xl:w-[30%];
+
+    img {
+      @apply h-auto w-[26px] self-center;
+    }
+
+    span {
+      @apply text-20 font-bold text-white;
+    }
+  }
+
+  .savedCardsAddCardMobileBtn {
+    @apply z-[999] flex h-[56px] w-full items-center justify-center rounded-full bg-primaryGold py-3 text-18 font-medium tracking-[-0.36px] text-white;
+
+    img {
+      @apply aspect-[1] w-[24px] max-w-full gap-3 self-center object-contain object-center;
+    }
+  }
+
+  .savedCardsNoCardsContainer {
+    @apply mx-[67px] mt-[100px] flex flex-col lg:mt-[147px]  lg:gap-[15px];
+
+    .savedCardsNoCardsImageContainer {
+      @apply mb-[34px] flex items-center  justify-center gap-[20px];
+    }
+  }
+
+  .savedCardsNoCardsAddCardBtn {
+    @apply fixed bottom-[51px] left-0 h-[88px] w-full rounded-t-[24px] bg-white md:static md:bg-transparent lg:mt-[-25px] xl:flex  xl:justify-center;
+    a {
+      @apply mx-auto mt-4 flex h-[56px] w-[80%] items-center justify-center gap-[5px] rounded-full bg-primaryGold md:mt-0 md:w-[60%]  xl:mx-0 xl:h-16 xl:items-center xl:justify-center xl:gap-2  xl:self-end;
+
+      img {
+        @apply h-auto w-[26px] self-center;
+      }
+
+      span {
+        @apply text-20 font-bold text-white;
+      }
+    }
+  }
+
+  .savedVisaCardIcon {
+    @apply h-auto self-center;
+  }
+
+  .savedMasterCardIcon {
+    @apply h-auto self-center;
+  }
+
+  .savedCardDeleteBtn {
+    @apply h-auto w-[24px] object-contain;
+  }
+
+  .savedCardAmexIcon {
+    @apply h-auto w-[35px] self-center;
+  }
+
+  .savedCardBtn {
+    @apply flex items-center gap-7 lg:w-[70%];
+
+    div {
+      @apply flex flex-col items-start leading-tight;
+
+      h3 {
+        @apply text-16 font-semibold leading-8 text-primaryDark;
+      }
+
+      span {
+        @apply text-12 font-normal text-primaryDark md:text-16;
+      }
+    }
+  }
+
+  /* ================================================ Upgrade / Renewal ================================================*/
+  .upgradeBenefitOffer {
+    @apply h-auto w-[40px] self-center md:w-[48px];
+  }
+
+  .upgradeBenefitBonusPoints {
+    @apply h-auto self-center;
+  }
+
+  .upgradeBenefitQueuing {
+    @apply h-auto w-[40px] self-center  md:w-[48px];
+  }
+
+  .upgradeBenefitBirthdayOffer {
+    @apply h-auto w-[40px] self-center md:w-[45px];
+  }
+
+  .upgradeBenefitBirthdayGift {
+    @apply h-auto w-[40px] self-center md:w-[48px];
+  }
+
+  .upgradeBenefitExclusive {
+    @apply h-auto w-[40px] self-center  md:w-[48px];
+  }
+
+  .upgradeBenefitBooking {
+    @apply h-auto w-[40px] self-center md:w-[48px];
+  }
+
+  /* ================================================ Edit Profile ================================================*/
+
+  /* ================================================ Inbox ================================================*/
+
+  .inboxMsgGoBackContainer {
+    @apply my-6 xl:my-0 xl:pb-9 xl:pt-10;
+  }
+
+  .inboxPromotionMsgDate {
+    @apply block text-14 leading-6 text-primaryGold3 xl:text-16;
+  }
+
+  .inboxPromotionMsgContent {
+    @apply text-14 font-normal leading-6 sm:text-16 lg:leading-9 xl:text-18;
+  }
+
+  .inboxViewProductWebBtn {
+    @apply mx-auto hidden max-w-[381px] rounded-full bg-primaryGold py-4  text-center text-18 leading-5 text-white md:mt-8  md:max-w-[50%] lg:my-5 lg:mr-[2.9rem]  lg:block lg:max-w-[200px] lg:py-4 xl:text-18;
+  }
+
+  .inboxViewProductMobileBtn {
+    @apply mx-auto block  max-w-[381px] rounded-full  bg-primaryGold py-4 text-center text-18  leading-5 text-white  lg:my-4 lg:mr-[2.9rem] lg:max-w-[230px] lg:py-3;
+  }
+  .inboxTitle {
+    @apply block pb-3 text-center text-20 font-semibold leading-6 text-primaryGold;
+  }
+
+  .inboxMessageNotRead {
+    @apply mt-[0.4rem] h-[10px] w-[10px]  rounded-full bg-primaryGold  xl:h-[13px] xl:w-[13px];
+  }
+
+  .inboxMessageRead {
+    @apply mt-[0.4rem] h-[10px] w-[10px] rounded-full  xl:h-[15px] xl:w-[15px];
+  }
+}
+
+@layer utilities {
+  /* ================================================ Profile ================================================*/
+
+  .sidebarContainer {
+    @apply flex w-full items-start justify-between px-4 md:px-[8rem] lg:hidden;
+  }
+
+  .sidebarAsideContainer {
+    @apply sticky top-0 pl-4 lg:top-[3rem] lg:px-0;
+
+    nav {
+      @apply flex w-full items-center overflow-x-auto md:justify-center lg:sticky lg:top-[7rem] lg:z-99;
+
+      .mobileSidebarUl {
+        @apply my-3 flex items-start gap-[8px] sm:justify-around lg:hidden;
+      }
+
+      .websiteSidebarUl {
+        @apply hidden lg:flex lg:w-full lg:flex-col;
+      }
+    }
+  }
+
+  .profileLayoutContainer {
+    @apply mx-auto min-h-[600px] pt-6 sm:px-14 md:px-4 lg:w-full lg:max-w-[950px] lg:gap-8 lg:px-0 lg:pb-[4rem] lg:pt-[2.5rem] 2xl:max-w-[1000px];
+  }
+
+  .profileSidebarContainer {
+    @apply lg:flex lg:justify-between;
+
+    aside {
+      @apply mb-3 flex flex-col md:mx-0 2xl:mx-0;
+    }
+  }
+
+  .profileContainer {
+    @apply max-w-full gap-1 lg:w-full lg:max-w-[950px] xl:max-w-[1200px];
+  }
+
+  .profileMemberContainer {
+    @apply flex items-center gap-3 pb-3 text-lg lg:pb-[20px];
+
+    h3 {
+      @apply text-20 font-semibold leading-[25px] text-primaryGold lg:text-[25px] lg:leading-[32px];
+    }
+  }
+
+  .profileInboxAndEditContainer {
+    @apply col-span-2 row-span-2 grid justify-items-end text-16;
+
+    div {
+      @apply flex items-center gap-5 lg:gap-7;
+    }
+  }
+
+  .profileTotalMsgsActivate {
+    @apply bg-primaryGold15 text-primaryGold;
+  }
+
+  .profileTotalMsgsDeactivate {
+    @apply bg-primaryGold text-primaryGold15;
+  }
+
+  .profileCouponNumberDeactivate {
+    @apply bg-primaryGold text-white;
+  }
+
+  .profileCouponNumberActivate {
+    @apply bg-primaryGold2 text-primaryGold;
+  }
+
+  .profileTotalMsgsText {
+    @apply text-12 font-bold leading-4 md:text-md lg:text-xl;
+  }
+
+  .profileQRcodeContainer {
+    @apply col-span-3 row-span-2 text-sm lg:flex lg:items-center lg:gap-4 lg:pb-10 lg:text-18;
+
+    button {
+      @apply hidden lg:static lg:block lg:w-[70px];
+
+      img {
+        @apply lg:h-auto lg:w-auto;
+      }
+    }
+  }
+
+  .profileMemberId {
+    @apply text-13  text-primaryDark lg:hidden;
+  }
+
+  .profileMemberNoContainer {
+    @apply lg:flex lg:flex-col lg:gap-2;
+
+    .profileMemberNo {
+      @apply hidden lg:block lg:text-12 lg:font-semibold lg:text-secondaryLightGold1;
+    }
+
+    .profileMemberNoText {
+      @apply hidden lg:block lg:text-18;
+    }
+  }
+
+  .profileSidebarItemsContainer,
+  .profileSidebarLogoutContainer {
+    @apply h-auto w-[70px] rounded-[12px];
+  }
+
+  .profileSidebarCouponNumber {
+    @apply absolute left-[45px] top-[-10px] ml-3 flex h-[30px] w-[30px] items-center justify-center rounded-full sm:left-[35px] md:top-[-10px] md:w-[50px] lg:left-[25px];
+  }
+
+  /* ================================================ Member Profile ================================================*/
+  .memberElitePrestigeCardTableTr {
+    @apply flex w-full justify-around border-b border-dotted border-primaryGrey py-[6px];
+  }
+
+  .memberElitePrestigeCardTd {
+    @apply w-1/2 text-center text-14 leading-5 text-primaryDark sm:text-16;
+  }
+
+  .memberHowUpgradeTime {
+    @apply pb-[30px] text-14 leading-5 lg:pb-0 xl:text-12;
+  }
+
+  .memberReceiptLayout {
+    @apply mx-auto px-4 pb-24 pt-6 sm:px-28 md:px-28 lg:grid lg:w-full lg:max-w-[900px] lg:gap-8 lg:px-0 lg:py-11 xl:pb-[3rem] xl:pt-[2rem] 2xl:max-w-[1100px];
+  }
+
+  .membershipLayout {
+    @apply mx-auto my-8 h-fit w-full max-w-full px-4 sm:max-w-[450px] lg:max-w-[620px] xl:mt-[50px];
+  }
+
+  /* ================================================ Coupon ================================================*/
+  .couponCard {
+    @apply mb-[23px] block h-auto w-full rounded-[12px] border-[1px] border-borderGrey30/30 shadow-imageShadow md:mb-7;
+  }
+
+  .couponImgContainer {
+    @apply flex items-center justify-center overflow-hidden rounded-t-[10px] bg-white;
+
+    img {
+      @apply block h-auto w-full rounded-t-[12px] object-contain;
+    }
+
+    span {
+      @apply absolute left-[25px] top-[20px] rounded-[10px] bg-[#E4DFD0] px-5 py-4 text-primaryGold;
+    }
+  }
+
+  .couponContentContainer {
+    @apply flex h-fit flex-col justify-between gap-[14px] rounded-b-[12px] bg-white px-4 py-[10px];
+    h3 {
+      @apply text-14 font-semibold text-black md:text-md md:font-medium lg:text-16;
+    }
+
+    h4 {
+      @apply text-12 leading-4 text-primaryGold opacity-50;
+    }
+  }
+
+  .couponTagContainer {
+    @apply flex w-full;
+  }
+
+  .singleCouponTagContainer {
+    @apply flex w-full flex-col items-center justify-center gap-3 px-4 pt-4 lg:gap-4 lg:px-0;
+
+    h2 {
+      @apply text-center text-18 font-semibold leading-6;
+    }
+
+    h4 {
+      @apply text-primaryGold4;
+    }
+  }
+
+  .couponTag {
+    @apply flex rounded-full;
+  }
+
+  .couponSingleCardContainer {
+    @apply md:mx-auto;
+  }
+
+  .couponSingleCardImgContainer {
+    @apply relative flex  h-[193px] w-full items-center justify-center px-4 sm:px-0 md:mx-auto md:overflow-hidden lg:h-[309px] lg:px-0 xl:bg-white;
+
+    img {
+      @apply block aspect-square h-auto w-full object-contain md:-mt-1;
+    }
+
+    span {
+      @apply absolute left-[25px] top-[40px] rounded-[10px] bg-[#E4DFD0] px-5 py-4 text-primaryGold shadow-md;
+    }
+  }
+
+  .couponSingleCardContent {
+    @apply flex flex-col items-center gap-4 pt-[18px] sm:gap-6 lg:items-start;
+
+    h2 {
+      @apply text-center text-16 font-semibold leading-4 text-primaryDark;
+    }
+
+    h4 {
+      @apply text-14 leading-4 text-primaryGold md:text-16;
+    }
+  }
+
+  .couponQRCodeCardContainer {
+    @apply relative mx-auto w-full max-w-[300px];
+
+    img {
+      @apply mx-auto h-[400px] w-full rounded-[25px] shadow-lg;
+    }
+  }
+
+  .couponQRCodeContentContainer {
+    @apply absolute left-1/2 top-1/2 mx-auto flex -translate-x-1/2 -translate-y-1/2 transform flex-col items-center;
+
+    figure {
+      @apply w-full max-w-[220px] rounded-[14px]  p-2;
+
+      img {
+        @apply h-auto w-full;
+      }
+    }
+  }
+
+  .couponQRCodeMemberProfileContainer {
+    @apply flex w-[208px] flex-col items-center gap-1 pb-2 leading-5;
+
+    h3 {
+      @apply text-16 leading-5 text-primaryDark;
+    }
+
+    h4 {
+      @apply text-12 text-primaryMine/70;
+    }
+  }
+
+  .couponQRCodeTextContainer {
+    @apply mx-auto mt-[20px] flex w-full max-w-[250px] flex-col text-center text-white;
+
+    h3,
+    span {
+      @apply text-12 font-semibold leading-5 sm:text-13;
+    }
+
+    p {
+      @apply w-[259px] text-10 leading-5 text-white text-opacity-60 sm:text-12;
+    }
+  }
+
+  .couponDisclaimerContainer {
+    @apply flex flex-col gap-3 px-4 pb-20 pt-9 text-lg font-semibold text-primaryDark lg:px-4 lg:py-[30px];
+
+    h3 {
+      @apply text-14 font-medium leading-5 text-primaryGold md:text-16 lg:text-18 lg:font-semibold;
+    }
+
+    ol {
+      @apply flex flex-col gap-2 pl-4 text-10 font-light leading-8 md:text-14;
+
+      li {
+        @apply list-item list-decimal;
+      }
+    }
+  }
+
+  .couponPayWithCardIconsContainer {
+    @apply flex items-center  justify-center gap-[20px] lg:mb-0;
+
+    .couponPayWithCardVisaIcon {
+      @apply xl:h-[41px] xl:w-[125px];
+    }
+
+    .couponPayWithCardMasterIcon {
+      @apply xl:h-[54px] xl:w-[87px];
+    }
+
+    .couponPayWithCardAEMXIcon {
+      @apply xl:h-[54px] xl:w-[54px];
+    }
+  }
+
+  // .couponPayWithCardAddCard {
+  //   a {
+  //     @apply mx-auto mt-3 flex h-[56px] w-[80%] items-center justify-center gap-1 rounded-full bg-primaryGold md:w-full xl:mx-0 xl:h-16  xl:items-center xl:justify-center xl:gap-3  xl:self-end;
+
+  //     img {
+  //       @apply w-[24px] md:h-[24px];
+  //     }
+  //   }
+
+  //   span {
+  //     @apply text-16 font-medium text-white;
+  //   }
+  // }
+
+  .couponCardDisclaimerContentContainer {
+    @apply flex flex-col gap-2 text-center text-primaryDark/60  lg:text-primaryGold;
+
+    li {
+      p {
+        @apply text-12 font-normal leading-4 tracking-[0.14px] text-mineShaft/60 xl:text-14;
+
+        span {
+          @apply hidden xl:inline;
+        }
+      }
+    }
+  }
+
+  .couponAddCardBtn {
+    @apply flex w-full gap-1 xl:justify-end;
+
+    a {
+      @apply mt-3 flex h-[50px] w-full items-center justify-center rounded-full bg-primaryGold md:w-full lg:mr-0 xl:max-w-[35%];
+
+      img {
+        @apply w-[24px] md:h-[24px];
+      }
+
+      span {
+        @apply text-18 font-medium leading-5 text-white;
+      }
+    }
+  }
+  /* ================================================ Coupon ================================================*/
+  .couponPageContainer {
+    @apply md:mx-auto md:my-10 md:w-full md:max-w-[500px] md:rounded-[18px] md:bg-white md:shadow-lg lg:mx-0 lg:mt-[21px] lg:w-full lg:max-w-full;
+  }
+
+  .noCouponsContainer {
+    @apply m-auto my-[20px] flex w-full flex-col items-center justify-center gap-3 py-16;
+    min-height: 300px;
+
+    img {
+      @apply h-auto w-[46px];
+    }
+
+    span {
+      @apply text-20 text-primaryGold md:text-24;
+    }
+  }
+
+  .favItemContainer {
+    min-height: 300px;
+  }
+
+  .couponsContainer {
+    @apply flex w-full justify-center pb-[1.75rem];
+  }
+
+  .couponsExpiredContainer {
+    @apply px-4 sm:px-11 md:py-6;
+  }
+
+  .couponsValidContainer {
+    @apply px-4 sm:px-11 md:px-12;
+  }
+
+  .singleCouponContainer {
+    @apply h-fit w-full rounded-[20px] lg:mt-[16px] lg:max-w-[630px] lg:bg-white lg:p-7  lg:shadow-lg;
+  }
+
+  .couponContainer {
+    @apply h-fit w-full rounded-[20px] px-4 sm:px-[7rem] lg:mt-[-90px] lg:max-w-[600px] lg:bg-white lg:px-14 lg:py-4 lg:pt-14 lg:shadow-lg 2xl:px-14 2xl:pt-20;
+
+    a {
+      @apply block pb-[37px] pt-[23px] lg:pl-0;
+    }
+  }
+
+  .couponQRCodeContainer {
+    @apply mx-auto mt-9 flex w-full max-w-[280px] flex-col justify-center;
+
+    a {
+      @apply mx-auto mt-4 block w-full rounded-full bg-primaryGold py-4 text-center text-16 font-medium leading-5 text-white lg:py-[1.3rem];
+    }
+  }
+
+  .couponNoCreditCardContainer {
+    @apply mt-[100px] flex w-full flex-col items-center xl:gap-[35px];
+  }
+
+  .couponSelectedCardContainer {
+    @apply h-fit w-full rounded-[20px] px-4 sm:px-[7rem] lg:mt-[22px] lg:max-w-[600px] lg:bg-white lg:px-8 lg:py-9 lg:shadow-lg;
+
+    .couponSelectedCardTitle {
+      @apply w-full pb-5 text-center;
+
+      h1 {
+        @apply pb-2 text-24 font-bold leading-6 text-primaryGold lg:pb-3 lg:text-left lg:text-primaryDark;
+      }
+    }
+  }
+
+  .couponCreditCardContainer {
+    @apply flex flex-col gap-4 md:gap-[31px];
+  }
+
+  .couponSingleContainer {
+    @apply mx-auto px-[16px] pb-24 pt-6 sm:px-28 md:px-40 lg:grid lg:w-full lg:max-w-[950px] lg:gap-8 lg:px-0 lg:pb-24 lg:pt-[2rem] 2xl:max-w-[1000px];
+  }
+
+  .couponSingleSidebarContainer {
+    @apply lg:flex lg:justify-between;
+
+    aside {
+      @apply mb-7 flex flex-col md:mx-0 2xl:mx-0;
+    }
+  }
+  /* ================================================ Transaction ================================================*/
+
+  .transactionContainer {
+    @apply sm:rounded-[28px] lg:mt-[23px] lg:w-full lg:max-w-full lg:bg-white;
+  }
+
+  .transactionDatePickerContainer {
+    @apply px-4 pb-2 lg:pt-8;
+  }
+
+  .transactionDatePickerBarContainer {
+    @apply flex w-full items-center justify-between gap-2 rounded-[8px] bg-primaryGold p-3 text-white 2xl:p-4;
+
+    span {
+      @apply text-14 font-semibold leading-4 2xl:text-16;
+    }
+
+    .transactionEditResetBtns {
+      @apply flex gap-3;
+
+      button {
+        img {
+          @apply 2xl:w-[20px];
+        }
+      }
+    }
+  }
+
+  .transactionNoReceiptContainer {
+    @apply flex w-full flex-col items-center justify-center gap-3 py-4 lg:py-16;
+    min-height: 300px;
+
+    img {
+      @apply h-auto w-[46px];
+    }
+
+    span {
+      @apply text-20 text-primaryGold md:text-24;
+    }
+  }
+
+  .transactionInstoreReceiptContainer {
+    .transactionLoadMoreBtn {
+      @apply flex w-full justify-center;
+
+      button {
+        @apply w-full max-w-[45%] rounded-full border-[1px] border-primaryGold py-[.8rem] text-20 text-primaryGold hover:bg-primaryGold hover:text-white lg:max-w-[30%];
+      }
+    }
+  }
+
+  .transactionOnlineContainer {
+    @apply lg:mt-[30px];
+  }
+
+  .transactionOnlineAwaitPickupTitle {
+    @apply text-12 font-semibold leading-4 text-primaryGold3 md:text-xl lg:pl-7;
+  }
+
+  .transactionOnlineAwaitPickupContainer {
+    @apply no-scrollbar flex gap-4 overflow-x-scroll pb-[30px] pt-[21px]  md:gap-6 lg:h-[250px] lg:pl-7;
+  }
+
+  .transactionReceiptContainer {
+    @apply md:px-5 lg:flex lg:flex-col;
+  }
+
+  .transactionReceiptSecondContainer {
+    @apply flex items-center justify-between xl:w-full;
+  }
+
+  .transactionReceiptThirdContainer {
+    @apply relative flex w-full flex-col gap-[34px];
+  }
+
+  .transactionReceiptBtnsContainer {
+    @apply lg:flex lg:h-[50px] lg:w-full lg:items-baseline lg:justify-between;
+
+    h3 {
+      @apply pb-[16px] pl-2 text-18 font-semibold leading-4 text-primaryDark lg:text-20  lg:text-primaryGold;
+    }
+  }
+
+  .transactionReceiptTableContainer {
+    @apply flex flex-col text-primaryDark lg:py-3;
+  }
+
+  .transactionMobileBtnsOuterContainer {
+    @apply flex flex-col;
+  }
+
+  .transactionMobileBtnsInnerContainer {
+    @apply my-6 flex w-full items-center gap-[13px] sm:flex-row sm:justify-center lg:hidden;
+  }
+
+  .transactionWebBtnsContainer {
+    @apply hidden lg:flex lg:w-[50%] lg:items-center lg:gap-4;
+  }
+
+  .transactionBottomDottedLine {
+    @apply h-1 w-full border-b-[1px] border-dotted border-primaryGold border-opacity-70 lg:hidden;
+  }
+
+  .transactionPickupSliderOuterContainer {
+    @apply rounded-[18px] bg-white  px-1 md:mb-0  md:mt-0  lg:flex lg:bg-secondaryLightGold2 lg:bg-opacity-[50%];
+  }
+
+  .transactionPickupSliderInnerContainer {
+    @apply flex w-[276px] flex-col items-start gap-[16px] px-5 py-6  md:items-center lg:w-[430px] lg:flex-row lg:px-5 xl:w-[460px];
+  }
+
+  .transactionPickupSlider {
+    @apply flex w-full flex-col;
+  }
+
+  /* ================================================ Receipt ================================================*/
+  .receiptFirstContainer {
+    @apply lg:mx-auto lg:flex lg:max-w-[600px] lg:flex-col;
+  }
+
+  .receiptSecondContainer {
+    @apply px-4 lg:rounded-[28px] lg:bg-white lg:px-10 lg:shadow-lg xl:px-14;
+  }
+
+  .receiptButtonsContainer {
+    @apply flex w-full items-center justify-end gap-3 py-4 lg:justify-end lg:gap-6 lg:pb-10 lg:pt-8;
+    button {
+      @apply flex h-[43px] w-[43px] items-center justify-center rounded-full border-[1px] border-primaryGold;
+    }
+  }
+
+  .receiptPickupOrderSummaryContainer {
+    @apply mx-auto h-fit w-full flex-col items-center gap-5 rounded-3xl bg-secondaryLightGold2 bg-opacity-60 sm:w-[80%] md:w-[60%] lg:mx-0 lg:w-full lg:bg-white;
+  }
+
+  .receiptDisclaimerContainer {
+    @apply mx-auto bg-[#D6D2CA]/80  lg:w-full lg:bg-transparent;
+  }
+
+  .receiptOrderSummaryContainer {
+    @apply flex w-full flex-col;
+
+    h3 {
+      @apply border-b-[1px] border-t-[1px] border-primaryDark py-[10px] pl-5 text-16 font-medium lg:text-18;
+    }
+  }
+
+  .receiptOrderSummaryListContainer {
+    @apply flex justify-between gap-5 xl:justify-start xl:pl-4;
+
+    li {
+      @apply flex gap-2;
+
+      img {
+        @apply self-center xl:h-3 xl:w-[16px];
+      }
+
+      span {
+        @apply text-14 font-medium leading-4 lg:text-16;
+      }
+    }
+  }
+
+  .receiptTableContainer {
+    @apply mx-5 mb-8 lg:mb-5;
+  }
+
+  .receiptTableTh {
+    @apply text-12 font-normal  leading-4 text-primaryMine lg:pb-3 lg:text-14 xl:w-[430px] xl:text-16;
+  }
+
+  .receiptAmountTableContainer {
+    @apply table-cell w-full border-primaryDark px-5 py-7;
+
+    tbody {
+      @apply flex flex-col gap-[14px];
+    }
+  }
+
+  .receiptPaymentDetailsTableContainer {
+    @apply table-cell w-full p-5;
+
+    tbody {
+      @apply flex flex-col gap-[14px];
+    }
+  }
+
+  .receiptPickupContainer {
+    @apply flex w-full flex-col px-4;
+  }
+
+  .receiptPickupH3 {
+    @apply flex flex-col pt-7 lg:w-full lg:flex-col-reverse lg:items-center lg:justify-center lg:pt-4;
+
+    h3 {
+      @apply text-center text-16 font-semibold text-primaryGold md:text-18 lg:pb-5 lg:text-24;
+    }
+  }
+
+  .receiptPickupSecondContainer {
+    @apply w-full;
+  }
+
+  .receiptPickupInfoContainer {
+    @apply mt-[20px] flex h-fit w-full flex-col items-center gap-5 rounded-3xl py-7 lg:mt-0 lg:bg-white;
+  }
+
+  .receiptPickupDetailsContainer {
+    @apply w-full xl:w-full;
+  }
+
+  .receiptPickupImageContainer {
+    div {
+      @apply text-14  xl:text-16;
+    }
+  }
+
+  .receiptPickupDetailsContactContainer {
+    @apply flex flex-col gap-8 pl-[2rem] xl:gap-9;
+
+    h4 {
+      @apply text-14 font-semibold leading-4 text-primaryGold lg:text-16 xl:pb-2;
+    }
+
+    span {
+      @apply text-12 leading-4 lg:text-16;
+    }
+  }
+
+  instoreReceiptItemsContainer {
+    @apply w-full text-primaryDark md:px-0;
+  }
+
+  .instoreReceiptSummaryFirstContainer {
+    @apply mx-auto w-full lg:flex lg:max-w-[600px] lg:flex-col;
+  }
+
+  .instoreReceiptSummarySecondContainer {
+    @apply px-4 sm:px-20 md:flex md:flex-col md:px-24 lg:rounded-[28px] lg:bg-white lg:px-12 lg:shadow-lg;
+  }
+
+  .instoreReceiptSummaryThirdContainer {
+    @apply h-fit w-full rounded-[20px]  text-primaryDark;
+  }
+
+  .instoreReceiptSummaryBtnsContainer {
+    @apply flex w-full items-center justify-end gap-5 pb-8 pt-3 lg:pt-7;
+  }
+
+  .instoreReceiptSummaryTitleContainer {
+    @apply flex flex-col lg:w-full lg:flex-row  lg:pt-4;
+  }
+
+  .instoreReceiptSummaryTableContainer {
+    @apply w-full pb-9 pt-7  md:pb-9 md:pt-7 lg:pb-11;
+  }
+
+  .instoreReceiptInfosTableContainer {
+    @apply flex flex-col gap-8;
+  }
+
+  /* ================================================ MemberShip ================================================*/
+  .membershipLinksContainer {
+    @apply w-full text-center;
+
+    h1 {
+      @apply py-4 text-22 font-bold leading-8 xl:hidden;
+    }
+
+    div {
+      @apply mt-[20px] rounded-[30px] shadow-lg xl:mb-[30px] xl:mt-[24px];
+
+      img {
+        @apply h-fit w-full self-center rounded-[30px];
+      }
+    }
+
+    ul {
+      @apply my-[36px] flex h-full w-full justify-between gap-[7px] xl:mb-[45px] xl:h-[114px];
+    }
+  }
+
+  .membershipContainer {
+    @apply flex flex-col gap-12 xl:gap-14;
+  }
+
+  .memberBenefitsCardContainer {
+    @apply flex w-full flex-col gap-7;
+
+    img {
+      @apply h-auto w-full rounded-[20px] shadow-md;
+    }
+  }
+
+  .becomeMemberCardContainer {
+    @apply flex items-center justify-center gap-4 pb-6 pt-12;
+
+    img {
+      @apply h-auto w-[26px] self-center;
+    }
+
+    h2 {
+      @apply text-24 font-bold;
+    }
+  }
+
+  .memberUpgradePrivilegesContainer {
+    @apply flex flex-col gap-12 xl:gap-14;
+  }
+
+  .memberUpgradePrivilegesTitles {
+    @apply flex items-center justify-center gap-4 pb-6;
+
+    img {
+      @apply h-auto w-[26px] self-center;
+    }
+
+    h2 {
+      @apply text-24 font-bold;
+    }
+  }
+
+  .membershipFaqContainer {
+    @apply flex items-center justify-center gap-4 pb-4;
+    img {
+      @apply h-auto w-[26px] self-center;
+    }
+
+    h2 {
+      @apply text-24 font-bold;
+    }
+  }
+
+  .membershipFaqPanelContainer {
+    @apply mb-4 w-full text-left;
+
+    ul {
+      @apply flex items-center justify-between border-b pb-4;
+
+      h3 {
+        @apply text-16 font-semibold leading-5;
+      }
+    }
+  }
+
+  .membershipFaqPanelContent {
+    @apply py-[18px] text-14 leading-5 md:text-lg 2xl:px-9 2xl:leading-6;
+  }
+
+  .membershipFaqWebTitlesContainer {
+    @apply flex items-center justify-center gap-4 pb-4;
+
+    img {
+      @apply h-auto w-[26px] self-center;
+    }
+
+    h2 {
+      @apply text-24 font-bold;
+    }
+  }
+
+  .membershipFaqWebContentContainer {
+    @apply flex flex-col gap-4 xl:gap-9;
+
+    li {
+      @apply flex flex-col gap-4;
+
+      h3 {
+        @apply text-16 font-semibold leading-5;
+      }
+      p {
+        @apply text-16 font-light leading-5;
+      }
+    }
+  }
+  /* ================================================ Saved Card ================================================*/
+  .savedCardContainer {
+    @apply flex flex-col rounded-[20px];
+  }
+
+  .savedCardFirstRow {
+    @apply flex w-full items-center justify-between gap-[20px];
+  }
+
+  .savedCardCVVRow {
+    @apply mt-3 flex w-full flex-col;
+  }
+
+  .savedCardContainerStyle {
+    @apply bg-white px-[14px] py-[16px] shadow-lg md:gap-7 md:px-6 md:py-3 lg:h-auto lg:p-6;
+  }
+
+  .nonCheckoutFormVisaStyle {
+    @apply h-auto w-[70px] md:w-[65px];
+  }
+
+  .checkoutFormVisaStyle {
+    @apply max-h-[12px] w-auto xl:h-[1.3vw];
+  }
+
+  .nonCheckoutFormMasterStyle {
+    @apply h-auto w-[35px];
+  }
+
+  .checkoutFormMasterStyle {
+    @apply max-h-[30px] w-auto xl:h-[2.3vw];
+  }
+
+  /* ================================================ Add card ================================================*/
+  .addCardPaymentDetailsContainer {
+    @apply mb-7 w-full rounded-[20px] bg-primaryGold15 p-[24px] lg:flex lg:flex-col lg:gap-4 xl:my-0 xl:w-[55%] xl:max-w-[100%] xl:bg-primaryGold05 2xl:my-0 2xl:h-[490px] 2xl:w-full 2xl:max-w-[265px] 2xl:px-[20px] 2xl:py-[19px];
+
+    h1 {
+      @apply pb-[8px] text-16 font-semibold leading-5 lg:text-18;
+    }
+
+    .addCardDescription {
+      @apply pb-[20px] text-12 leading-6 lg:pb-0 lg:text-14;
+    }
+
+    .addCardMerchantLocated {
+      @apply hidden pb-[20px] text-12 leading-5 lg:pb-0 xl:block xl:text-14;
+    }
+
+    .addCardDivider {
+      @apply block h-[1x] w-full border-b-[1px] border-primaryMine pt-2;
+    }
+  }
+
+  .addCardAmountContainer {
+    @apply flex justify-between pt-[20px] text-18 font-semibold leading-5 lg:pt-0;
+
+    .addCardPrice {
+      @apply text-[30px] font-semibold leading-5 xl:text-primaryGold;
+    }
+  }
+
+  .addCardContainer {
+    @apply flex flex-col sm:px-[4rem] lg:px-0;
+  }
+
+  .addCardTitlesContainer {
+    @apply mb-6 flex flex-col gap-4 text-lg xl:flex-row xl:items-center xl:justify-between;
+
+    h2 {
+      @apply text-16 font-semibold leading-5 lg:text-20;
+    }
+
+    .addCardsIconContainer {
+      @apply flex items-center gap-[20px];
+
+      img {
+        @apply self-center;
+
+        &:nth-child(1) {
+          @apply xl:h-[16px] xl:w-[52px];
+        }
+
+        &:nth-child(2) {
+          @apply xl:h-[22px] xl:w-[36px];
+        }
+
+        &:nth-child(3) {
+          @apply xl:h-[22px] xl:w-[22px];
+        }
+      }
+    }
+  }
+
+  .addCardFullContainer {
+    @apply flex flex-col gap-[24px]  xl:w-full xl:flex-row 2xl:min-h-[380px] 2xl:w-full 2xl:gap-[25px];
+  }
+
+  .addCardWebButtonsContainer {
+    @apply hidden h-[56px] w-full items-center gap-7 lg:flex xl:mb-4 xl:mt-12;
+
+    & .text {
+      @apply text-center 
+      text-xl 
+      font-semibold;
+    }
+    & .backButton {
+      @apply h-full 
+      md:w-[20%] 
+      2xl:w-[30%];
+    }
+    & .processButton {
+      @apply h-full 
+      w-[35%] 
+      flex-1;
+    }
+  }
+
+  .addCardMobileButtonsContainer {
+    @apply flex w-full items-center gap-7 xl:my-4;
+
+    a {
+      @apply text-18 font-medium text-primaryGold 2xl:w-[192px] 2xl:text-center;
+    }
+
+    button {
+      @apply h-[56px] w-[35%] flex-1 rounded-full bg-primaryGold text-18  font-medium leading-4 text-white  disabled:bg-opacity-40 xl:max-w-[729px] xl:py-[21px];
+    }
+  }
+
+  .creditCardCvvPopUpContainer {
+    @apply fixed inset-0 flex flex-col items-center justify-center gap-8;
+
+    div {
+      @apply mb-6 h-[568px] w-[343px] overflow-hidden rounded-3xl md:h-[26.4vw] md:w-[51.0vw];
+
+      .creditCardImageTipsMobile {
+        @apply block h-full w-full object-cover md:hidden;
+      }
+
+      .creditCardTipsWeb {
+        @apply hidden h-full w-full object-cover md:block;
+      }
+    }
+  }
+
+  /* ================================================ Edit Profile ================================================*/
+  .editProfileTitlesContainer {
+    @apply flex w-full flex-col gap-[24px] pb-[31px];
+
+    h1 {
+      @apply text-center text-24 font-semibold leading-5 text-primaryGold xl:text-24;
+    }
+
+    p {
+      @apply text-14 font-light leading-7 lg:text-16;
+
+      span {
+        @apply font-semibold text-primaryDark;
+      }
+    }
+  }
+
+  .creditCardLoaderContainer {
+    @apply fixed left-0 top-0 z-[9999] flex h-screen w-full items-center justify-center bg-mineShaft80 backdrop-blur-md;
+  }
+  /* ================================================ Upgrade / Renewal ================================================*/
+  .upgradeContainer {
+    @apply flex flex-col px-4 md:px-0 lg:mt-[26px] lg:gap-[3rem] lg:px-0 xl:mr-0;
+  }
+
+  .upgradeRenewalCardContainer {
+    @apply mx-auto  w-full rounded-[37px] bg-white shadow-lg sm:rounded-[43px] lg:rounded-[60px];
+
+    figure {
+      @apply relative;
+    }
+  }
+
+  .upgradeRenewalHeader {
+    @apply block w-full object-cover;
+  }
+
+  .upgradeRenewalCard {
+    @apply absolute left-[50%] flex w-full -translate-x-1/2  -translate-y-1/2 transform justify-start  gap-3 px-4 sm:gap-5 sm:px-8 md:gap-7;
+    .upgradeRenewalText {
+      @apply flex h-[36px] w-[70px] items-center justify-center self-center rounded-full bg-primaryGold05  px-2 py-1 text-11 font-medium leading-5 sm:w-[70px] md:w-[100px] md:py-2 md:text-14;
+    }
+    .upgradeRenewalDescription {
+      @apply w-[60%] text-12 leading-5 text-white lg:text-16 xl:w-[70%];
+    }
+
+    img {
+      @apply h-auto w-[16px] self-center md:w-[20px];
+    }
+  }
+
+  .upgradeOpenRenewalContentContainer {
+    @apply mx-auto mb-4 flex w-full max-w-[85%] flex-col lg:gap-3;
+
+    .upgradeRequirementText {
+      @apply block pt-[20px] text-center lg:py-0;
+    }
+
+    .upgradeExpiryDate {
+      @apply block w-full py-[20px] text-center text-15 lg:py-0;
+    }
+  }
+
+  .upgradeCardFirstContainer {
+    @apply pb-10 lg:flex lg:w-full lg:flex-col;
+  }
+
+  .upgradeCardSecondContainer {
+    @apply h-full rounded-[24px] bg-white shadow-lg  sm:rounded-[43px] lg:mx-0 lg:rounded-[50px];
+  }
+
+  .upgradeCardHeaderContainer {
+    @apply absolute left-[50%] top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform justify-start gap-3 px-4 sm:gap-5 sm:px-8 md:gap-7;
+    .upgradeCardTitle {
+      @apply flex h-[36px] w-[65px] items-center  justify-center self-center rounded-full  bg-primaryGold05 px-4 py-1 text-11 font-medium  md:w-[120px] md:py-2  md:text-14;
+    }
+
+    .upgradeCardDescriptionContainer {
+      @apply text-13 leading-5 text-white sm:text-14 lg:text-16 xl:text-18;
+
+      span {
+        @apply leading-4 lg:text-16 xl:text-18;
+      }
+    }
+  }
+
+  .upgradeCardHeaderImg {
+    @apply block h-[80px] w-full rounded-t-[20px] object-cover md:rounded-t-[35px]  lg:h-[90px] lg:rounded-t-[36px];
+  }
+
+  .upgradeCardSpendingContainer {
+    @apply mx-auto w-full max-w-[80%];
+
+    .upgradeCardRequirement {
+      @apply block w-full py-[30px] text-center text-12 leading-4 lg:py-0 xl:mx-auto xl:w-[80%] xl:text-16;
+    }
+
+    .upgradeCardStartAt {
+      @apply block w-full py-[16px] text-center text-15 lg:py-0 xl:text-18;
+    }
+  }
+
+  .upgradeSemiCircleContainer {
+    @apply mx-auto mt-5 sm:mt-8 xl:w-full xl:max-w-[450px];
+  }
+
+  .upgradeSemiCircleSvgContainer {
+    @apply relative flex h-auto  w-full justify-center overflow-visible px-7  sm:px-14 lg:px-40 xl:px-4;
+
+    svg {
+      @apply mx-auto block h-auto w-full overflow-visible;
+    }
+    .upgradeSemiCircleSvgTextContainer {
+      @apply absolute top-1/2 flex flex-col items-center;
+
+      h3 {
+        @apply pb-4 text-[40px] font-semibold leading-5 text-primaryDark;
+
+        span {
+          @apply block pt-4 text-center text-18 leading-5;
+        }
+      }
+    }
+  }
+
+  .upgradeCardBenefitContainer {
+    @apply mb-4 px-4 pb-4  sm:px-8 md:p-7;
+  }
+
+  .benefitItemsContainer {
+    @apply relative overflow-hidden  rounded-[24px] py-[10px] sm:gap-4 sm:p-4;
+  }
+
+  .benefitItemListContainer {
+    @apply flex flex-col gap-9 px-7 pb-8 pt-16 xl:gap-11 xl:px-6 2xl:pb-4 2xl:pt-16;
+  }
+
+  .benefitTierText {
+    @apply absolute left-0 top-0 block w-[200px] rounded-br-[24px] rounded-tl-[24px] px-7 py-[10px] text-base text-white sm:top-0 md:py-[12px] md:text-14  xl:text-16;
+  }
+
+  /* ================================================ Inbox ================================================*/
+  .inboxContainer {
+    @apply mb-[5.5rem] md:w-full md:rounded-[28px] md:bg-white md:py-8 md:shadow-lg lg:mt-[23px] lg:max-w-[650px];
+  }
+
+  .inboxLayoutContainer {
+    @apply mx-auto px-4 pb-24  pt-6 sm:px-28 md:px-40 lg:grid lg:w-full lg:max-w-[900px] lg:gap-8 lg:px-0 lg:py-24 xl:max-w-[1000px] 2xl:max-w-[1100px];
+  }
+
+  .inboxSidebarContainer {
+    @apply lg:flex lg:justify-between;
+
+    aside {
+      @apply mb-7 flex flex-col md:mx-0 2xl:mx-0;
+    }
+  }
+
+  .inboxMsgContainer {
+    @apply h-fit w-full lg:mt-[22px] lg:max-w-[650px] lg:rounded-[28px] lg:bg-white lg:shadow-lg 2xl:pb-6;
+  }
+
+  .inboxPromotionMsgContentContainer {
+    @apply px-4 leading-9 sm:px-16 md:px-8 lg:px-11 lg:pt-12 2xl:px-14 2xl:pb-[14px];
+  }
+
+  .inboxPromotionMsgImageContainer {
+    @apply mb-[23px] h-[209px] sm:h-[229px] lg:h-[306px];
+
+    img {
+      @apply mx-auto block h-full w-full object-cover lg:w-[552px];
+    }
+  }
+
+  .inboxPromotionMsgInfoContainer {
+    @apply flex-col gap-7 md:flex;
+  }
+
+  .inboxPromotionMsgInfoSecondContainer {
+    @apply flex flex-col text-center lg:gap-7 lg:text-left;
+  }
+
+  .inboxPromotionMsgTitlesContainer {
+    @apply flex flex-col gap-2 text-center;
+
+    h1 {
+      @apply block text-20 font-semibold  leading-6 text-primaryGold sm:text-24;
+    }
+
+    h2 {
+      @apply text-16 leading-6 text-secondaryLightGold1 xl:text-20;
+    }
+  }
+
+  .inboxMessageCardContainer {
+    @apply mt-12 flex w-full flex-col items-center gap-2 sm:my-10;
+
+    h2 {
+      @apply text-16 font-medium text-primaryGold sm:text-18;
+    }
+  }
+
+  .inboxMessageListContainer {
+    @apply px-4 sm:px-[3rem]  md:pb-4 xl:mx-auto xl:flex  xl:max-w-[728px] xl:flex-col xl:gap-4;
+
+    li {
+      @apply flex justify-between border-b-[1px] border-dashed border-primaryGold4 py-3  xl:flex xl:cursor-pointer xl:items-center xl:justify-start xl:py-2;
+    }
+  }
+
+  .inboxMessageItemContainer {
+    @apply flex items-center gap-3 xl:gap-4;
+  }
+
+  .inboxMessageContentContainer {
+    @apply flex flex-col gap-2 xl:flex;
+  }
+
+  .inboxMessageTimeContainer {
+    @apply xl:ml-auto xl:flex xl:self-start;
+
+    span {
+      @apply text-12 leading-4 xl:self-baseline xl:text-14;
+    }
+  }
+
+  .inboxMessagesContainer {
+    @apply mx-auto mt-6  w-full max-w-[175px] sm:max-w-[300px]  md:mb-6 md:max-w-[160px];
+  }
+}
+
+:root {
+  --basic: linear-gradient(to bottom, #882961, #d261a5);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slide-in {
+  transform: translateX(-100%);
+  animation: slideIn 3s forwards;
+  position: absolute;
+  left: 16px;
+  z-index: 100;
+}
+
+.slide-out {
+  animation: slideOut 0.8s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.borderSolid:last-childs {
+  border-bottom: 2px solid #6a1648;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: "#8D7A5B";
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: "#8D7A5B";
+  border: 3px solid "#8D7A5B";
+}
+
+.odd:nth-child(odd) {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.semi-doughnut-mobile {
+  --percentage: 0;
+  --fill: #8d7a5b;
+  overflow: hidden;
+  width: 100%;
+  height: 125px;
+  position: relative;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  overflow: hidden;
+  color: var(--fill);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 35px 0 22px 0;
+}
+
+.semi-doughnut-mobile::before {
+  content: "";
+  width: 250px;
+  height: 250px;
+  border: 17px solid;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
+  position: absolute;
+  border-radius: 50%;
+  left: 1;
+  top: 0;
+  display: block;
+  box-sizing: border-box;
+  transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
+  animation: fillAnimation 1s ease-in;
+}
+
+@keyframes fillAnimation {
+  0% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(135deg);
+  }
+}
+
+.semi-doughnut-medium {
+  --percentage: 0;
+  --fill: #8a3969;
+  width: 100%;
+  height: 166px;
+  position: relative;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  overflow: hidden;
+  color: var(--fill);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 35px 0 22px 0;
+}
+
+.semi-doughnut-medium::before {
+  content: "";
+  width: 330px;
+  height: 330px;
+  border: 20px solid;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
+  position: absolute;
+  border-radius: 50%;
+  left: 1;
+  top: 0;
+  box-sizing: border-box;
+  transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
+  animation: fillAnimation 1s ease-in;
+}
+
+.safariTextColor {
+  color: rgba(141, 122, 91, 1);
+  -webkit-text-fill-color: rgba(141, 122, 91, 1);
+  -webkit-opacity: 1;
+}
+
+.filled-path {
+  stroke-dasharray: var(--total-path-length);
+  stroke-dashoffset: var(--stroke-dashoffset);
+  animation: dash 1.5s linear both;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: var(--total-path-length);
+  }
+  to {
+    stroke-dashoffset: var(--stroke-dashoffset);
+  }
+}

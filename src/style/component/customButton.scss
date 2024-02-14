@@ -1,0 +1,201 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../generalSize.scss";
+
+.mainButton{
+    @apply rounded-full
+    flex
+    justify-center
+    items-center;
+    
+    &.mainStyle {
+        @apply bg-primaryGold 
+        text-white 
+        active:invert-0 
+        enabled:hover:bg-primaryGold4 
+        enabled:hover:text-primaryDark 
+        enabled:active:bg-deepPrimaryGold  
+        enabled:active:text-white;
+
+        &.noHover {
+            @apply
+            enabled:hover:bg-primaryGold 
+            enabled:hover:text-white 
+            enabled:active:bg-primaryGold  
+            enabled:active:text-white;
+        }
+    }
+
+    &.secondaryStyle {
+        @apply border 
+        border-solid 
+        border-primaryGold 
+        bg-transparent 
+        text-primaryGold 
+        enabled:hover:bg-primaryGold 
+        enabled:hover:text-white 
+        enabled:active:bg-transparent 
+        enabled:active:text-primaryGold;
+    }
+    &.disable {
+        @apply hover:pointer-events-none 
+        cursor-default 
+        opacity-40 
+        active:pointer-events-none 
+        active:bg-primaryGold 
+        active:text-white;
+    }
+    &.inactive {
+        @apply border 
+        border-solid 
+        border-primaryGold3 
+        bg-primaryGold3 
+        text-primaryGold 
+        hover:text-primaryGold 
+        active:text-primaryGold;
+    }
+    &.noBorder{
+        @apply border-none;
+    }
+}
+
+/*===============================CustomSwitch===========================*/
+
+.customSwitchContainer {
+    @apply rounded-full
+    bg-primaryDark/20;
+
+    .switchBody {
+        @apply flex 
+        aspect-[2.2/1] 
+        h-auto 
+        w-[68px] 
+        items-center
+        justify-between
+        lg:w-[60px]
+        2xl:w-[65px];
+
+        &.tcBox {
+            @apply flex-row-reverse 
+            justify-between 
+            pl-[6px] 
+            pr-[11px] 
+            md:pl-2 
+            md:pr-3 
+            lg:pr-4;
+        }
+        &.enBox {
+            @apply flex-row 
+            pl-[11px] 
+            pr-[6px] 
+            md:pl-3 
+            md:pr-2 
+            lg:pl-4;
+        }
+
+        span {
+            @apply text-center 
+            text-16 
+            leading-5
+             text-primaryDark 
+             md:text-14 
+             2xl:text-16;
+        }
+        .dot {
+            @apply box-border 
+            aspect-square 
+            w-6 
+            flex-shrink-0 
+            rounded-full 
+            bg-primaryDark 
+            md:w-5 
+            2xl:w-[19px];
+        }
+    }
+}
+
+.addonContainer {
+    @apply flex
+    md:mr-6 
+    items-center 
+    my-4;
+
+    &.desktop {
+        @apply justify-start;
+    }
+    &.mobile {
+        @apply w-full 
+        flex-row-reverse 
+        justify-between;
+    }
+
+    .addOnButton {
+        @apply mr-3 
+        flex 
+        h-[23px] 
+        w-[47px] 
+        items-center 
+        rounded-full 
+        md:h-[23px] 
+        md:w-[40px] 
+        lg:h-[25px] 
+        lg:w-[50px] 
+        2xl:h-[30px] 
+        2xl:w-[60px];
+        
+        &.pick {
+            @apply justify-end 
+            bg-primaryGold 
+            pr-[4px] 
+            2xl:pr-[6px];
+        }
+        &.unpick {
+            @apply justify-start 
+            bg-lightGrey 
+            pl-[4px] 
+            2xl:pl-[6px];
+        }
+
+        .dot {
+            @apply w-4 
+            rounded-full 
+            bg-white
+            h-auto
+            aspect-square
+            lg:w-[18px]
+            2xl:w-[20px];
+        }
+    }
+    span{
+        @apply text-md 
+        font-medium 
+        text-primaryDark 
+        lg:text-lg 
+        2xl:text-xl;
+    }
+}
+
+.progressBar {
+    @apply relative 
+    flex 
+    items-center 
+    justify-center 
+    md:py-2;
+
+    li{
+        @apply relative 
+        mr-8 
+        after:absolute 
+        after:right-0 
+        after:top-1/2 
+        after:-mr-8 
+        after:h-px 
+        after:w-8 
+        after:-translate-y-1/2 
+        after:bg-primaryDark 
+        after:content-[''] 
+        after:last-of-type:hidden;
+
+    }
+}
